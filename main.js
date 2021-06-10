@@ -14,8 +14,9 @@ function readJsonFile(file){
         rawFile.send();
     })
 }
-var file = 'data.json';
-let nav = document.querySelector("nav");
+var file    = 'data.json';
+let nav     = document.querySelector("nav");
+
 nav.addEventListener("click", (e) =>{
 
     readJsonFile(file).then(function (response){
@@ -30,8 +31,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 0;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -42,8 +43,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 1;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -54,8 +55,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 2;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -66,7 +67,7 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 3;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
+                planetDescription       = planet[cursor].overview.content;
                 planetWikipedia         = planet[cursor].geology.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
@@ -78,8 +79,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 4;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -90,8 +91,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 5;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -102,8 +103,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 6;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -114,8 +115,8 @@ nav.addEventListener("click", (e) =>{
                 cursor                  = 7;
                 planetImg               = planet[cursor].images.planet;
                 planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].geology.content;
-                planetWikipedia         = planet[cursor].geology.source;
+                planetDescription       = planet[cursor].overview.content;
+                planetWikipedia         = planet[cursor].overview.source;
                 planetRotationTime      = planet[cursor].rotation;
                 planetRevolutionTime    = planet[cursor].revolution;
                 planetRadius            = planet[cursor].radius;
@@ -130,7 +131,7 @@ nav.addEventListener("click", (e) =>{
         mainImg.setAttribute("title", planetName);
 
         let mainTitle = document.querySelector("#main-title");
-        mainTitle.textContent = planetName;
+        mainTitle.textContent = planetName.toUpperCase();
 
         let mainText = document.querySelector("#main-text");
         mainText.textContent = planetDescription;
@@ -162,55 +163,83 @@ choiceView.addEventListener("click", (e) =>{
 
     readJsonFile(file).then(function (response){
 
-       let mainTitle = document.querySelector("#main-title");
-
-       if(e.target.textContent == "OVERVIEW"){
-           switch(mainTitle){
+        let planet      = JSON.parse(response);
+        let mainTitle   = document.querySelector("#main-title");
+        let planetImg, planetText, planetWikipedia;
+        if(e.target.textContent == "OVERVIEW"){
+           switch(mainTitle.textContent){
                case "MERCURY":
-                   cursor                  = 0;
-
+                   cursor                   = 0;
+                   planetImg                = planet[cursor].images.planet;
+                   planetText               = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "VENUS":
-                   cursor                  = 1;
-
+                   cursor                   = 1;
+                   planetImg                = planet[cursor].images.planet;
+                   planetText               = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "EARTH":
                    cursor                  = 2;
-
+                   planetImg               = planet[cursor].images.planet;
+                   planetText             = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "MARS":
                    cursor                  = 3;
-
+                   planetImg               = planet[cursor].images.planet;
+                   planetText             = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "JUPITER":
                    cursor                  = 4;
-
+                   planetImg               = planet[cursor].images.planet;
+                   planetText             = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "SATURN":
                    cursor                  = 5;
-
+                   planetImg               = planet[cursor].images.planet;
+                   planetText             = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "URANUS":
                    cursor                  = 6;
+                   planetImg               = planet[cursor].images.planet;
+                   planetText             = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
                case "NEPTUNE":
                    cursor                  = 7;
-
+                   planetImg               = planet[cursor].images.planet;
+                   planetText             = planet[cursor].overview.content;
+                   planetWikipedia          = planet[cursor].overview.source;
 
                    break;
            }
-       }else if(e.target.textContent == "INTERNAL STRUCTURE"){
 
-       }else if(e.target.textContent == "SURFACE GEOLOGY"){
+            let mainImg = document.querySelector("#main-img");
+            mainImg.setAttribute("src", planetImg);
 
-       }
+            let mainText = document.querySelector("#main-text");
+            mainText.textContent =  planetText;
+
+            let wikipediaPage = document.querySelector("#wikipedia-page");
+            wikipediaPage.setAttribute("href", planetWikipedia);
+
+        }else if(e.target.textContent == "INTERNAL STRUCTURE"){
+            //HERE
+        }else if(e.target.textContent == "SURFACE GEOLOGY"){
+            //HERE
+        }
 
     }).catch(function (error){
         console.log(error);
