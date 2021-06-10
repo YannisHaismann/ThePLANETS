@@ -26,6 +26,12 @@ nav.addEventListener("click", (e) =>{
         planetRadius, planetAverageTemp;
         let cursor = 0;
         console.log(planet);
+
+        let zoomImg = document.querySelector("#img-geology");
+        if(zoomImg.style.display != "none"){
+            zoomImg.style.display = "none";
+        }
+
         switch(e.target.textContent){
             case "MERCURY":
                 cursor = 0;
@@ -63,9 +69,7 @@ nav.addEventListener("click", (e) =>{
         planetAverageTemp       = planet[cursor].temperature;
 
         let mainImg = document.querySelector("#main-img");
-        mainImg.setAttribute("src", planetImg);
-        mainImg.setAttribute("alt", planetName);
-        mainImg.setAttribute("title", planetName);
+        mainImg.style.backgroundImage = "url(" + planetImg +")";
 
         let mainTitle = document.querySelector("#main-title");
         mainTitle.textContent = planetName.toUpperCase();
@@ -87,7 +91,6 @@ nav.addEventListener("click", (e) =>{
 
         let averageTempNb = document.querySelector("#average-temp-nb");
         averageTempNb.textContent = planetAverageTemp;
-
 
     }).catch(function (error){
         console.log(error);
@@ -129,8 +132,12 @@ choiceView.addEventListener("click", (e) =>{
                 cursor = 7;
                 break;
         }
-
+        let zoomImg = document.querySelector("#img-geology");
         if(e.target.textContent == "OVERVIEW"){
+
+            if(zoomImg.style.display != "none"){
+                zoomImg.style.display = "none";
+            }
 
             planetImg              = planet[cursor].images.planet;
             planetText             = planet[cursor].overview.content;
@@ -138,11 +145,19 @@ choiceView.addEventListener("click", (e) =>{
 
         }else if(e.target.textContent == "INTERNAL STRUCTURE"){
 
+            if(zoomImg.style.display != "none"){
+                zoomImg.style.display = "none";
+            }
+
             planetImg              = planet[cursor].images.internal;
             planetText             = planet[cursor].structure.content;
             planetWikipedia        = planet[cursor].structure.source;
 
         }else if(e.target.textContent == "SURFACE GEOLOGY"){
+            console.log(zoomImg.style.display)
+            if(zoomImg.style.display == "none"){
+                zoomImg.style.display = "block";
+            }
 
             planetImg              = planet[cursor].images.planet;
             planetText             = planet[cursor].geology.content;
@@ -151,7 +166,7 @@ choiceView.addEventListener("click", (e) =>{
         }
 
         let mainImg = document.querySelector("#main-img");
-        mainImg.setAttribute("src", planetImg);
+        mainImg.style.backgroundImage = "url(" + planetImg + ")";
 
         let mainText = document.querySelector("#main-text");
         mainText.textContent =  planetText;
