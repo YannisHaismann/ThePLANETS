@@ -37,14 +37,7 @@ p {
 }
 
 body {
-  padding: 1px;
-  background-color: grey;
-  font-family: "Antonio", sans-serif;
-  color: white;
-}
-
-div#main-img {
-  height: 400px;
+  background-image: url("../../assets/background-stars.svg");
 }
 
 /*# sourceMappingURL=style.css.map */
