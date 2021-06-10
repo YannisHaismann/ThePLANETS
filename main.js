@@ -28,102 +28,39 @@ nav.addEventListener("click", (e) =>{
         console.log(planet);
         switch(e.target.textContent){
             case "MERCURY":
-                cursor                  = 0;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 0;
+                break;
             case "VENUS":
-                cursor                  = 1;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 1;
+                break;
             case "EARTH":
-                cursor                  = 2;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 2;
+                break;
             case "MARS":
-                cursor                  = 3;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].geology.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 3;
+                break;
             case "JUPITER":
-                cursor                  = 4;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 4;
+                break;
             case "SATURN":
-                cursor                  = 5;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 5;
+                break;
             case "URANUS":
-                cursor                  = 6;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 6;
+                break;
             case "NEPTUNE":
-                cursor                  = 7;
-                planetImg               = planet[cursor].images.planet;
-                planetName              = planet[cursor].name;
-                planetDescription       = planet[cursor].overview.content;
-                planetWikipedia         = planet[cursor].overview.source;
-                planetRotationTime      = planet[cursor].rotation;
-                planetRevolutionTime    = planet[cursor].revolution;
-                planetRadius            = planet[cursor].radius;
-                planetAverageTemp       = planet[cursor].temperature;
-
-            break;
+                cursor = 7;
+                break;
         }
+
+        planetImg               = planet[cursor].images.planet;
+        planetName              = planet[cursor].name;
+        planetDescription       = planet[cursor].overview.content;
+        planetWikipedia         = planet[cursor].overview.source;
+        planetRotationTime      = planet[cursor].rotation;
+        planetRevolutionTime    = planet[cursor].revolution;
+        planetRadius            = planet[cursor].radius;
+        planetAverageTemp       = planet[cursor].temperature;
 
         let mainImg = document.querySelector("#main-img");
         mainImg.setAttribute("src", planetImg);
@@ -166,80 +103,61 @@ choiceView.addEventListener("click", (e) =>{
         let planet      = JSON.parse(response);
         let mainTitle   = document.querySelector("#main-title");
         let planetImg, planetText, planetWikipedia;
+
+        switch(mainTitle.textContent){
+            case "MERCURY":
+                cursor = 0;
+                break;
+            case "VENUS":
+                cursor = 1;
+                break;
+            case "EARTH":
+                cursor = 2;
+                break;
+            case "MARS":
+                cursor = 3;
+                break;
+            case "JUPITER":
+                break;
+            case "SATURN":
+                cursor = 5;
+                break;
+            case "URANUS":
+                cursor = 6;
+                break;
+            case "NEPTUNE":
+                cursor = 7;
+                break;
+        }
+
         if(e.target.textContent == "OVERVIEW"){
-           switch(mainTitle.textContent){
-               case "MERCURY":
-                   cursor                   = 0;
-                   planetImg                = planet[cursor].images.planet;
-                   planetText               = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
 
-                   break;
-               case "VENUS":
-                   cursor                   = 1;
-                   planetImg                = planet[cursor].images.planet;
-                   planetText               = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-               case "EARTH":
-                   cursor                  = 2;
-                   planetImg               = planet[cursor].images.planet;
-                   planetText             = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-               case "MARS":
-                   cursor                  = 3;
-                   planetImg               = planet[cursor].images.planet;
-                   planetText             = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-               case "JUPITER":
-                   cursor                  = 4;
-                   planetImg               = planet[cursor].images.planet;
-                   planetText             = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-               case "SATURN":
-                   cursor                  = 5;
-                   planetImg               = planet[cursor].images.planet;
-                   planetText             = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-               case "URANUS":
-                   cursor                  = 6;
-                   planetImg               = planet[cursor].images.planet;
-                   planetText             = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-               case "NEPTUNE":
-                   cursor                  = 7;
-                   planetImg               = planet[cursor].images.planet;
-                   planetText             = planet[cursor].overview.content;
-                   planetWikipedia          = planet[cursor].overview.source;
-
-                   break;
-           }
-
-            let mainImg = document.querySelector("#main-img");
-            mainImg.setAttribute("src", planetImg);
-
-            let mainText = document.querySelector("#main-text");
-            mainText.textContent =  planetText;
-
-            let wikipediaPage = document.querySelector("#wikipedia-page");
-            wikipediaPage.setAttribute("href", planetWikipedia);
+            planetImg              = planet[cursor].images.planet;
+            planetText             = planet[cursor].overview.content;
+            planetWikipedia        = planet[cursor].overview.source;
 
         }else if(e.target.textContent == "INTERNAL STRUCTURE"){
-            //HERE
+
+            planetImg              = planet[cursor].images.internal;
+            planetText             = planet[cursor].structure.content;
+            planetWikipedia        = planet[cursor].structure.source;
+
         }else if(e.target.textContent == "SURFACE GEOLOGY"){
-            //HERE
+
+            planetImg              = planet[cursor].images.planet;
+            planetText             = planet[cursor].geology.content;
+            planetWikipedia        = planet[cursor].geology.source;
+
         }
+
+        let mainImg = document.querySelector("#main-img");
+        mainImg.setAttribute("src", planetImg);
+
+        let mainText = document.querySelector("#main-text");
+        mainText.textContent =  planetText;
+
+        let wikipediaPage = document.querySelector("#wikipedia-page");
+        wikipediaPage.setAttribute("href", planetWikipedia);
 
     }).catch(function (error){
         console.log(error);
