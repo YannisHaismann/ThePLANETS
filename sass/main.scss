@@ -1,6 +1,12 @@
+@import "base/fonts";
+@import "utils/all";
+@import "components/all";
+
 body{
   padding: 1px;
   background-color: grey;
+  font-family: 'Antonio', sans-serif;
+  color: $white;
 }
 
 div#main-img{
