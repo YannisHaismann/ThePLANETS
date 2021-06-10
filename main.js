@@ -156,9 +156,61 @@ nav.addEventListener("click", (e) =>{
     });
 });
 
+
 let choiceView = document.querySelector("#choice-view");
-choiceView.addEventListener("click", () =>{
+choiceView.addEventListener("click", (e) =>{
+
     readJsonFile(file).then(function (response){
+
+       let mainTitle = document.querySelector("#main-title");
+
+       if(e.target.textContent == "OVERVIEW"){
+           switch(mainTitle){
+               case "MERCURY":
+                   cursor                  = 0;
+
+
+                   break;
+               case "VENUS":
+                   cursor                  = 1;
+
+
+                   break;
+               case "EARTH":
+                   cursor                  = 2;
+
+
+                   break;
+               case "MARS":
+                   cursor                  = 3;
+
+
+                   break;
+               case "JUPITER":
+                   cursor                  = 4;
+
+
+                   break;
+               case "SATURN":
+                   cursor                  = 5;
+
+
+                   break;
+               case "URANUS":
+                   cursor                  = 6;
+
+                   break;
+               case "NEPTUNE":
+                   cursor                  = 7;
+
+
+                   break;
+           }
+       }else if(e.target.textContent == "INTERNAL STRUCTURE"){
+
+       }else if(e.target.textContent == "SURFACE GEOLOGY"){
+
+       }
 
     }).catch(function (error){
         console.log(error);
