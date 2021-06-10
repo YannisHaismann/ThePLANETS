@@ -14,14 +14,15 @@ function readJsonFile(file){
         rawFile.send();
     })
 }
+var file = 'data.json';
 let nav = document.querySelector("nav");
-
 nav.addEventListener("click", (e) =>{
-    let file = 'data.json';
+
     readJsonFile(file).then(function (response){
 
         let planet = JSON.parse(response);
-        let planetImg, planetName, planetDescription, planetWikipedia;
+        let planetImg, planetName, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
+        planetRadius, planetAverageTemp;
         let cursor = 0;
         console.log(planet);
         switch(e.target.textContent){
@@ -31,6 +32,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "VENUS":
@@ -39,6 +44,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "EARTH":
@@ -47,6 +56,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "MARS":
@@ -55,6 +68,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "JUPITER":
@@ -63,6 +80,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "SATURN":
@@ -71,6 +92,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "URANUS":
@@ -79,6 +104,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
             case "NEPTUNE":
@@ -87,6 +116,10 @@ nav.addEventListener("click", (e) =>{
                 planetName              = planet[cursor].name;
                 planetDescription       = planet[cursor].geology.content;
                 planetWikipedia         = planet[cursor].geology.source;
+                planetRotationTime      = planet[cursor].rotation;
+                planetRevolutionTime    = planet[cursor].revolution;
+                planetRadius            = planet[cursor].radius;
+                planetAverageTemp       = planet[cursor].temperature;
 
             break;
         }
@@ -105,13 +138,31 @@ nav.addEventListener("click", (e) =>{
         let wikipediaPage = document.querySelector("#wikipedia-page");
         wikipediaPage.setAttribute("href", planetWikipedia);
 
+        let rotationTimeNb = document.querySelector("#rotation-time-nb");
+        rotationTimeNb.textContent = planetRotationTime;
+
+        let revolutionTimeNb = document.querySelector("#revolution-time-nb");
+        revolutionTimeNb.textContent = planetRevolutionTime;
+
+        let radiusNb = document.querySelector("#radius-nb");
+        radiusNb.textContent = planetRadius;
+
+        let averageTempNb = document.querySelector("#average-temp-nb");
+        averageTempNb.textContent = planetAverageTemp;
+
 
     }).catch(function (error){
         console.log(error);
     });
+});
 
+let choiceView = document.querySelector("#choice-view");
+choiceView.addEventListener("click", () =>{
+    readJsonFile(file).then(function (response){
 
-
+    }).catch(function (error){
+        console.log(error);
+    });
 });
 
 
