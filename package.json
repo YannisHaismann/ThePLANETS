@@ -1,0 +1,11 @@
+{
+  "name": "theplanets",
+  "version": "1.0.0",
+  "description": "Website Training",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "author": "Yannis Haismann",
+  "license": "ISC"
+}
