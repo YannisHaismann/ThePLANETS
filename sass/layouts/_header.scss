@@ -1,0 +1,18 @@
+//DESKTOP
+@media (min-width: $tablet) {
+  nav{
+    border-bottom: 1px solid $lowblue;
+    display: flex;
+    justify-content: space-between;
+    & > ol {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      margin: auto 0px auto 0px;
+    }
+    & > h2{
+      margin: 20px 30px 20px 30px;
+    }
+  }
+}
+

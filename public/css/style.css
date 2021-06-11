@@ -6,7 +6,7 @@ h1 {
 
 h2 {
   font-family: "Antonio", sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 52px;
   letter-spacing: -1.5px;
 }
@@ -18,7 +18,7 @@ h3 {
   letter-spacing: 2.6px;
 }
 
-.choice-view li {
+ol li, h4 {
   font-family: "Spartan", sans-serif;
   font-size: 11px;
   line-height: 25px;
@@ -31,13 +31,45 @@ p {
   line-height: 25px;
 }
 
+@keyframes nav-hoover {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 .choice-view li {
   border: 1px solid #38384f;
   padding: 2px;
 }
 
 body {
-  background-image: url("../../assets/background-stars.svg");
+  color: white;
+  background-image: url("../../assets/figmaBackground.png");
+  border: 2px solid black;
+  margin: 0px;
+}
+
+ol li {
+  list-style-type: none;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+  nav > ol {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto 0px auto 0px;
+  }
+  nav > h2 {
+    margin: 20px 30px 20px 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

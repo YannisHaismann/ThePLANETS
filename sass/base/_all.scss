@@ -1,4 +1,9 @@
 body{
-  //color: $white;
-  background-image: url("../../assets/background-stars.svg");
+  color: $white;
+  background-image: url("../../assets/figmaBackground.png");
+  border: 2px solid black;
+  margin: 0px;
+}
+ol li{
+  list-style-type: none;
 }
