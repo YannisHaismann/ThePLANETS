@@ -31,14 +31,6 @@ p {
   line-height: 25px;
 }
 
-@keyframes nav-hoover {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
 .choice-view li {
   border: 1px solid #38384f;
   padding: 2px;
@@ -47,7 +39,6 @@ p {
 body {
   color: white;
   background-image: url("../../assets/figmaBackground.png");
-  border: 2px solid black;
   margin: 0px;
 }
 
@@ -60,12 +51,36 @@ ol li {
     border-bottom: 1px solid rgba(45, 104, 240, 0.2);
     display: flex;
     justify-content: space-between;
+    height: 100px;
   }
   nav > ol {
     display: flex;
     justify-content: space-around;
     width: 50%;
-    margin: auto 0px auto 0px;
+    height: 100px;
+    margin: 0px;
+  }
+  nav > ol > li {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  nav > ol > li > span {
+    margin: auto;
+  }
+  nav > ol > li > span:hover + div {
+    background-color: #419ebb;
+    transform: scaleX(1);
+    transition-duration: 300ms;
+    transition-property: transform;
+  }
+  nav > ol > li > div {
+    transform: scaleX(0);
+    transition-duration: 200ms;
+    height: 2px;
+    width: 100%;
+    grid-row-start: 1;
+    border-radius: 10px;
   }
   nav > h2 {
     margin: 20px 30px 20px 30px;

@@ -4,11 +4,35 @@
     border-bottom: 1px solid $lowblue;
     display: flex;
     justify-content: space-between;
+    height: 100px;
     & > ol {
       display: flex;
       justify-content: space-around;
       width: 50%;
-      margin: auto 0px auto 0px;
+      height: 100px;
+      margin: 0px;
+      & > li{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr;
+        & > span{
+          margin: auto;
+          &:hover + div{
+            background-color: $lightblue;
+            transform: scaleX(1);
+            transition-duration: 300ms;
+            transition-property: transform;
+          }
+        }
+        & > div{
+          transform: scaleX(0);
+          transition-duration: 200ms;
+          height: 2px;
+          width: 100%;
+          grid-row-start: 1;
+          border-radius: 10px;
+        }
+      }
     }
     & > h2{
       margin: 20px 30px 20px 30px;
