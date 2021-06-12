@@ -253,5 +253,40 @@ ol li {
     background-color: #419ebb;
   }
 }
+@media (min-width: 1025px) {
+  .main-img {
+    background-image: url("../../assets/planet-earth.svg");
+    background-repeat: no-repeat;
+  }
+  .main-img > img {
+    display: none;
+  }
+
+  .mid-content {
+    margin: 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .mid-content > .main-img {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 25%;
+  }
+  .mid-content > .side-description {
+    grid-column: 4/6;
+    grid-row: 1/2;
+  }
+  .mid-content > .side-description > .description-text {
+    margin-right: 100px;
+    font-weight: normal;
+  }
+  .mid-content > .choice-view {
+    grid-column: 4/6;
+    grid-row: 2/3;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

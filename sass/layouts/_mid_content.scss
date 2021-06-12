@@ -1,0 +1,38 @@
+//DESKTOP
+@media (min-width: $tablet) {
+
+  .main-img{
+    background-image: url("../../assets/planet-earth.svg");
+    background-repeat: no-repeat;
+    & > img{
+      display: none;
+    }
+  }
+
+  .mid-content{
+    margin: 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    & > .main-img{
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
+      width: 100%;
+      height: 100%;
+      background-position: 50% 25%;
+    }
+    & > .side-description{
+      grid-column: 4 / 6;
+      grid-row: 1 / 2;
+      & > .description-text{
+        margin-right: 100px;
+        font-weight: normal;
+      }
+    }
+    & > .choice-view{
+      grid-column: 4 / 6;
+      grid-row: 2 / 3;
+    }
+  }
+
+}
