@@ -12,6 +12,7 @@
       height: 100px;
       margin: 0px;
       & > li{
+        margin: 0px 5px 0px 5px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows:  1fr 1fr 1fr;
@@ -27,6 +28,41 @@
         & > div{
           transform: scaleX(0);
           transition-duration: 200ms;
+          height: 2px;
+          width: 100%;
+          grid-row-start: 1;
+          border-radius: 10px;
+        }
+      }
+    }
+    & > h2{
+      margin: 20px 30px 20px 30px;
+    }
+  }
+}
+
+//TABLET
+@media (min-width: $phone) and (max-width: $tablet) {
+  nav{
+    border-bottom: 1px solid $lowblue;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    & > ol {
+      display: flex;
+      justify-content: space-around;
+      margin: 0px;
+      flex-wrap: wrap;
+      & > li{
+        margin: 0px 10px 0px 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr;
+        & > span{
+          margin: auto;
+        }
+        & > div{
           height: 2px;
           width: 100%;
           grid-row-start: 1;

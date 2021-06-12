@@ -42,6 +42,10 @@ body {
   margin: 0px;
 }
 
+ol {
+  padding-left: 0px;
+}
+
 ol li {
   list-style-type: none;
   cursor: pointer;
@@ -62,6 +66,7 @@ ol li {
     margin: 0px;
   }
   nav > ol > li {
+    margin: 0px 5px 0px 5px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -78,6 +83,39 @@ ol li {
   nav > ol > li > div {
     transform: scaleX(0);
     transition-duration: 200ms;
+    height: 2px;
+    width: 100%;
+    grid-row-start: 1;
+    border-radius: 10px;
+  }
+  nav > h2 {
+    margin: 20px 30px 20px 30px;
+  }
+}
+@media (min-width: 375px) and (max-width: 1024px) {
+  nav {
+    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+  }
+  nav > ol {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    flex-wrap: wrap;
+  }
+  nav > ol > li {
+    margin: 0px 10px 0px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  nav > ol > li > span {
+    margin: auto;
+  }
+  nav > ol > li > div {
     height: 2px;
     width: 100%;
     grid-row-start: 1;

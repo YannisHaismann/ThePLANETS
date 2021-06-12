@@ -3,6 +3,9 @@ body{
   background-image: url("../../assets/figmaBackground.png");
   margin: 0px;
 }
+ol{
+  padding-left: 0px;
+}
 ol li{
   list-style-type: none;
   cursor: pointer;
