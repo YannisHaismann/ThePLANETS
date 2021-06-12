@@ -102,83 +102,82 @@ nav.addEventListener("click", (e) =>{
 
 let choiceView = document.querySelector("#choice-view");
 choiceView.addEventListener("click", (e) =>{
+    if(e.target.textContent == "OVERVIEW" || e.target.textContent == "INTERNAL STRUCTURE" || e.target.textContent == "SURFACE GEOLOGY"){
+        readJsonFile(file).then(function (response) {
+            let planet = JSON.parse(response);
+            let mainTitle = document.querySelector("#main-title");
+            let planetImg, planetText, planetWikipedia;
 
-    readJsonFile(file).then(function (response){
+            switch (mainTitle.textContent) {
+                case "MERCURY":
+                    cursor = 0;
+                    break;
+                case "VENUS":
+                    cursor = 1;
+                    break;
+                case "EARTH":
+                    cursor = 2;
+                    break;
+                case "MARS":
+                    cursor = 3;
+                    break;
+                case "JUPITER":
+                    break;
+                case "SATURN":
+                    cursor = 5;
+                    break;
+                case "URANUS":
+                    cursor = 6;
+                    break;
+                case "NEPTUNE":
+                    cursor = 7;
+                    break;
+            }
+            let zoomImg = document.querySelector("#img-geology");
+            if (e.target.textContent == "OVERVIEW") {
 
-        let planet      = JSON.parse(response);
-        let mainTitle   = document.querySelector("#main-title");
-        let planetImg, planetText, planetWikipedia;
+                if (zoomImg.style.display != "none") {
+                    zoomImg.style.display = "none";
+                }
 
-        switch(mainTitle.textContent){
-            case "MERCURY":
-                cursor = 0;
-                break;
-            case "VENUS":
-                cursor = 1;
-                break;
-            case "EARTH":
-                cursor = 2;
-                break;
-            case "MARS":
-                cursor = 3;
-                break;
-            case "JUPITER":
-                break;
-            case "SATURN":
-                cursor = 5;
-                break;
-            case "URANUS":
-                cursor = 6;
-                break;
-            case "NEPTUNE":
-                cursor = 7;
-                break;
-        }
-        let zoomImg = document.querySelector("#img-geology");
-        if(e.target.textContent == "OVERVIEW"){
+                planetImg = planet[cursor].images.planet;
+                planetText = planet[cursor].overview.content;
+                planetWikipedia = planet[cursor].overview.source;
 
-            if(zoomImg.style.display != "none"){
-                zoomImg.style.display = "none";
+            } else if (e.target.textContent == "INTERNAL STRUCTURE") {
+
+                if (zoomImg.style.display != "none") {
+                    zoomImg.style.display = "none";
+                }
+
+                planetImg = planet[cursor].images.internal;
+                planetText = planet[cursor].structure.content;
+                planetWikipedia = planet[cursor].structure.source;
+
+            } else if (e.target.textContent == "SURFACE GEOLOGY") {
+                if (zoomImg.style.display == "none") {
+                    zoomImg.style.display = "block";
+                }
+
+                planetImg = planet[cursor].images.planet;
+                planetText = planet[cursor].geology.content;
+                planetWikipedia = planet[cursor].geology.source;
+
             }
 
-            planetImg              = planet[cursor].images.planet;
-            planetText             = planet[cursor].overview.content;
-            planetWikipedia        = planet[cursor].overview.source;
+            let mainImg = document.querySelector("#main-img");
+            mainImg.style.backgroundImage = "url(" + planetImg + ")";
 
-        }else if(e.target.textContent == "INTERNAL STRUCTURE"){
+            let mainText = document.querySelector("#main-text");
+            mainText.textContent = planetText;
 
-            if(zoomImg.style.display != "none"){
-                zoomImg.style.display = "none";
-            }
+            let wikipediaPage = document.querySelector("#wikipedia-page");
+            wikipediaPage.setAttribute("href", planetWikipedia);
 
-            planetImg              = planet[cursor].images.internal;
-            planetText             = planet[cursor].structure.content;
-            planetWikipedia        = planet[cursor].structure.source;
-
-        }else if(e.target.textContent == "SURFACE GEOLOGY"){
-            console.log(zoomImg.style.display)
-            if(zoomImg.style.display == "none"){
-                zoomImg.style.display = "block";
-            }
-
-            planetImg              = planet[cursor].images.planet;
-            planetText             = planet[cursor].geology.content;
-            planetWikipedia        = planet[cursor].geology.source;
-
-        }
-
-        let mainImg = document.querySelector("#main-img");
-        mainImg.style.backgroundImage = "url(" + planetImg + ")";
-
-        let mainText = document.querySelector("#main-text");
-        mainText.textContent =  planetText;
-
-        let wikipediaPage = document.querySelector("#wikipedia-page");
-        wikipediaPage.setAttribute("href", planetWikipedia);
-
-    }).catch(function (error){
-        console.log(error);
-    });
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
 });
 
 
