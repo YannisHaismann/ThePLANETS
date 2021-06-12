@@ -6,6 +6,9 @@
       display: flex !important;
     }
   }
+  .icon-chevron{
+    display: none;
+  }
 
   nav{
     border-bottom: 1px solid $lowblue;
@@ -42,8 +45,11 @@
         }
       }
     }
-    & > h2{
+    & > .top-nav{
       margin: 20px 30px 20px 30px;
+      & > h2{
+        margin: auto;
+      }
     }
   }
 }
@@ -55,6 +61,9 @@
     & + ol {
       display: flex !important;
     }
+  }
+  .icon-chevron{
+    display: none;
   }
 
   nav{
@@ -84,8 +93,11 @@
         }
       }
     }
-    & > h2{
+    & > top-nav{
       margin: 20px 30px 20px 30px;
+      & > h2{
+        margin: auto;
+      }
     }
   }
 }
@@ -100,40 +112,87 @@
       grid-column: 1 / 2;
     }
   }
+  .icon-chevron{
+    display: block;
+  }
 
   nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-row: repeat(7, 1fr);
-    & > .hamburger-icon{
-      margin: auto 70% auto;
+    & > .top-nav{
+      grid-column: 1 / 3;
       grid-row: 1;
-      grid-column: 2;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid $lowblue;
+      & > .hamburger-icon{
+        width: 24px;
+        margin: auto 20px auto;
+      }
+      & > h2 {
+        margin: auto 0px auto 20px;
+      }
+    }
+    & > .nav{
+      grid-column: span 2;
+      & > li {
+        display: grid;
+        grid-template-columns: 50px 140px 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        border-bottom: 2px solid $lowblue;
+        margin: auto;
+        width: 85%;
+        &:active{
+          background-color: rgba(150, 150, 150, 0.4);
+        }
+        & > div{
+          margin: 22px auto 22px 0px;
+          grid-row: 1;
+          grid-column: 1;
+          height: 20px;
+          width: 20px;
+          border-radius: 20px;
+        }
+        & > span{
+          grid-column: 2;
+          margin: 20px auto 20px 0px;
+          font-size: 16px;
+        }
+        & > img {
+          grid-column: 6;
+          grid-row: 1;
+          margin: auto;
+        }
+      }
     }
   }
 
-.nav{
-  & > li {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr;
-    border-bottom: 1px solid $lowblue;
-    & > div{
-      margin: 22px;
-      grid-row: 1;
-      grid-column: 1;
-      height: 20px;
-      width: 20px;
-      border-radius: 20px;
-      background-color: red;
-    }
-    & > span{
-      grid-column: 2;
-      margin: 20px;
-      font-size: 16px;
-    }
+  #mercury > div{
+    background-color: $mercury;
   }
-}
+  #venus > div{
+    background-color: $venus;
+  }
+  #earth > div{
+    background-color: $earth;
+  }
+  #mars > div{
+    background-color: $mars;
+  }
+  #jupiter > div{
+    background-color: $jupiter;
+  }
+  #saturn > div{
+    background-color: $saturn;
+  }
+  #uranus > div{
+    background-color: $uranus;
+  }
+  #neptune > div{
+    background-color: $neptune;
+  }
 
 }
 
