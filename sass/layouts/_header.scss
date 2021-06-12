@@ -22,10 +22,12 @@
       height: 100px;
       margin: 0px;
       & > li{
+        font-weight: bold;
         margin: 0px 5px 0px 5px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows:  1fr 1fr 1fr;
+        font-size: 12px;
         & > span{
           margin: auto;
           &:hover + div{

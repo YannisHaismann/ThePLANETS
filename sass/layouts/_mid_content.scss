@@ -10,7 +10,7 @@
   }
 
   .mid-content{
-    margin: 100px;
+    margin:  50px 100px 50px 100px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(5, 1fr);
@@ -28,10 +28,40 @@
         margin-right: 100px;
         font-weight: normal;
       }
+      & > .wikipedia-link{
+        color: rgba(355, 355, 355, 0.7);
+        & > a{
+          color: rgba(355, 355, 355, 0.7);
+          &:hover{
+            color: white;
+          }
+        }
+        & > img{
+          position: relative;
+          top: 2px;
+          left: 5px;
+        }
+      }
     }
     & > .choice-view{
       grid-column: 4 / 6;
       grid-row: 2 / 3;
+      width: 350px;
+    }
+    & > .choice-view{
+      font-weight: bold;
+      & > li{
+        font-size: 12px;
+        margin: 10px 0px 10px 0px;
+        height: 48px;
+      }
+    }
+  }
+
+  li.btn-choice{
+    display: flex;
+    & > div{
+      margin: auto 0px auto 30px;
     }
   }
 

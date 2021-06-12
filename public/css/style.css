@@ -77,10 +77,12 @@ ol li {
     margin: 0px;
   }
   nav > ol > li {
+    font-weight: bold;
     margin: 0px 5px 0px 5px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    font-size: 12px;
   }
   nav > ol > li > span {
     margin: auto;
@@ -263,7 +265,7 @@ ol li {
   }
 
   .mid-content {
-    margin: 100px;
+    margin: 50px 100px 50px 100px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(5, 1fr);
@@ -283,9 +285,39 @@ ol li {
     margin-right: 100px;
     font-weight: normal;
   }
+  .mid-content > .side-description > .wikipedia-link {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .mid-content > .side-description > .wikipedia-link > a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .mid-content > .side-description > .wikipedia-link > a:hover {
+    color: white;
+  }
+  .mid-content > .side-description > .wikipedia-link > img {
+    position: relative;
+    top: 2px;
+    left: 5px;
+  }
   .mid-content > .choice-view {
     grid-column: 4/6;
     grid-row: 2/3;
+    width: 350px;
+  }
+  .mid-content > .choice-view {
+    font-weight: bold;
+  }
+  .mid-content > .choice-view > li {
+    font-size: 12px;
+    margin: 10px 0px 10px 0px;
+    height: 48px;
+  }
+
+  li.btn-choice {
+    display: flex;
+  }
+  li.btn-choice > div {
+    margin: auto 0px auto 30px;
   }
 }
 
