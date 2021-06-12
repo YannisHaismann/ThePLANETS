@@ -44,6 +44,7 @@ body {
 
 ol li {
   list-style-type: none;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
