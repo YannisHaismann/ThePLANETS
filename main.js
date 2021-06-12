@@ -15,7 +15,7 @@ function readJsonFile(file){
     })
 }
 var file    = 'data.json';
-let nav     = document.querySelector("nav");
+let nav     = document.querySelector("#nav");
 
 nav.addEventListener("click", (e) =>{
 
@@ -25,7 +25,6 @@ nav.addEventListener("click", (e) =>{
         let planetImg, planetName, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
         planetRadius, planetAverageTemp;
         let cursor = 0;
-        console.log(planet);
 
         let zoomImg = document.querySelector("#img-geology");
         if(zoomImg.style.display != "none"){
@@ -57,19 +56,21 @@ nav.addEventListener("click", (e) =>{
             case "NEPTUNE":
                 cursor = 7;
                 break;
+            default:
+                cursor = -1;
         }
-
-        planetImg               = planet[cursor].images.planet;
-        planetName              = planet[cursor].name;
-        planetDescription       = planet[cursor].overview.content;
-        planetWikipedia         = planet[cursor].overview.source;
-        planetRotationTime      = planet[cursor].rotation;
-        planetRevolutionTime    = planet[cursor].revolution;
-        planetRadius            = planet[cursor].radius;
-        planetAverageTemp       = planet[cursor].temperature;
+    if(cursor >= 0) {
+        planetImg = planet[cursor].images.planet;
+        planetName = planet[cursor].name;
+        planetDescription = planet[cursor].overview.content;
+        planetWikipedia = planet[cursor].overview.source;
+        planetRotationTime = planet[cursor].rotation;
+        planetRevolutionTime = planet[cursor].revolution;
+        planetRadius = planet[cursor].radius;
+        planetAverageTemp = planet[cursor].temperature;
 
         let mainImg = document.querySelector("#main-img");
-        mainImg.style.backgroundImage = "url(" + planetImg +")";
+        mainImg.style.backgroundImage = "url(" + planetImg + ")";
 
         let mainTitle = document.querySelector("#main-title");
         mainTitle.textContent = planetName.toUpperCase();
@@ -91,6 +92,7 @@ nav.addEventListener("click", (e) =>{
 
         let averageTempNb = document.querySelector("#average-temp-nb");
         averageTempNb.textContent = planetAverageTemp;
+    }
 
     }).catch(function (error){
         console.log(error);

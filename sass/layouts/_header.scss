@@ -1,5 +1,12 @@
 //DESKTOP
 @media (min-width: $tablet) {
+  .hamburger-icon{
+    display: none;
+    & + ol {
+      display: flex !important;
+    }
+  }
+
   nav{
     border-bottom: 1px solid $lowblue;
     display: flex;
@@ -43,6 +50,13 @@
 
 //TABLET
 @media (min-width: $phone) and (max-width: $tablet) {
+  .hamburger-icon{
+    display: none;
+    & + ol {
+      display: flex !important;
+    }
+  }
+
   nav{
     border-bottom: 1px solid $lowblue;
     display: flex;
@@ -74,5 +88,52 @@
       margin: 20px 30px 20px 30px;
     }
   }
+}
+//PHONE
+@media(max-width: $phone) {
+  .hamburger-icon {
+    display: block;
+    width: 26px;
+    & + ol {
+      display: none;
+      grid-row: 3;
+      grid-column: 1 / 2;
+    }
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-row: repeat(7, 1fr);
+    & > .hamburger-icon{
+      margin: auto 70% auto;
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+
+.nav{
+  & > li {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    border-bottom: 1px solid $lowblue;
+    & > div{
+      margin: 22px;
+      grid-row: 1;
+      grid-column: 1;
+      height: 20px;
+      width: 20px;
+      border-radius: 20px;
+      background-color: red;
+    }
+    & > span{
+      grid-column: 2;
+      margin: 20px;
+      font-size: 16px;
+    }
+  }
+}
+
 }
 

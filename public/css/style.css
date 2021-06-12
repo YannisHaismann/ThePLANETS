@@ -51,7 +51,14 @@ ol li {
   cursor: pointer;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
+  .hamburger-icon {
+    display: none;
+  }
+  .hamburger-icon + ol {
+    display: flex !important;
+  }
+
   nav {
     border-bottom: 1px solid rgba(45, 104, 240, 0.2);
     display: flex;
@@ -92,7 +99,14 @@ ol li {
     margin: 20px 30px 20px 30px;
   }
 }
-@media (min-width: 375px) and (max-width: 1024px) {
+@media (min-width: 376px) and (max-width: 1025px) {
+  .hamburger-icon {
+    display: none;
+  }
+  .hamburger-icon + ol {
+    display: flex !important;
+  }
+
   nav {
     border-bottom: 1px solid rgba(45, 104, 240, 0.2);
     display: flex;
@@ -123,6 +137,49 @@ ol li {
   }
   nav > h2 {
     margin: 20px 30px 20px 30px;
+  }
+}
+@media (max-width: 376px) {
+  .hamburger-icon {
+    display: block;
+    width: 26px;
+  }
+  .hamburger-icon + ol {
+    display: none;
+    grid-row: 3;
+    grid-column: 1/2;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-row: repeat(7, 1fr);
+  }
+  nav > .hamburger-icon {
+    margin: auto 70% auto;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .nav > li {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
+  }
+  .nav > li > div {
+    margin: 22px;
+    grid-row: 1;
+    grid-column: 1;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: red;
+  }
+  .nav > li > span {
+    grid-column: 2;
+    margin: 20px;
+    font-size: 16px;
   }
 }
 
