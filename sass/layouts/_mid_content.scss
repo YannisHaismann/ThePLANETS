@@ -30,9 +30,15 @@
 
 li.btn-choice{
   display: flex;
+  &:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
   & > div{
     margin: auto 0px auto 30px;
   }
+}
+.overview{
+  background-color: rgba(109, 46, 213, 1);
 }
 
 //DESKTOP
@@ -50,6 +56,7 @@ li.btn-choice{
     & > .main-img{
       grid-column: 1 / 4;
       grid-row: 1 / 3;
+      background-size: 500px;
       & > img{
         position: relative;
         top: 2px;
@@ -142,9 +149,16 @@ li.btn-choice{
       grid-column: 1;
       grid-row: 1 / 2;
       justify-content: space-around;
+      & > li{
+        color: rgba(255, 255, 255, 0.8)
+      }
+      & > .overview{
+        border-bottom: 4px solid $purple;
+        color: white;
+      }
       & > li.btn-choice{
-        height: 100%;
-        width: 30%;
+        height: 94%;
+        background-color: rgba(0, 0, 0, 0);
         & > div{
           margin: auto;
         }
