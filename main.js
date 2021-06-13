@@ -34,8 +34,6 @@ nav.addEventListener("click", (e) =>{
 
     readJsonFile(file).then(function (response){
 
-        console.log(window.innerWidth);
-
         let planet = JSON.parse(response);
         let planetImg, planetName, planetGeologyImg, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
         planetRadius, planetAverageTemp, width, geologyWidth;
@@ -170,7 +168,6 @@ nav.addEventListener("click", (e) =>{
 
 let choiceView = document.querySelector("#choice-view");
 choiceView.addEventListener("click", (e) =>{
-    console.log(e.target);
     let overviewElt             = document.getElementById("overview");
     let internalStructureElt    = document.getElementById("internal-structure");
     let surfaceGeologyElt       = document.getElementById("surface-geology");
