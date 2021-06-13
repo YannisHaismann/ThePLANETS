@@ -330,6 +330,7 @@ li.btn-choice > div {
   .mid-content > .main-img {
     grid-column: 1/4;
     grid-row: 1/3;
+    background-size: 50%;
   }
   .mid-content > .side-description {
     grid-column: 4/6;
@@ -365,6 +366,7 @@ li.btn-choice > div {
   }
   .mid-content > .main-img {
     height: 610px;
+    width: 100%;
     grid-row: 1;
     grid-column: 1/3;
   }
