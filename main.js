@@ -107,7 +107,11 @@ nav.addEventListener("click", (e) =>{
 let choiceView = document.querySelector("#choice-view");
 choiceView.addEventListener("click", (e) =>{
     console.log(e.target);
-    if(e.target.textContent == "OVERVIEW" || e.target.textContent == "INTERNAL STRUCTURE" || e.target.textContent == "SURFACE GEOLOGY"){
+    let overviewElt = document.getElementById("overview");
+    let internalStructureElt = document.getElementById("internal-structure");
+    let surfaceGeologyElt = document.getElementById("surface-geology");
+    if(e.target.textContent == "OVERVIEW" || e.target.textContent == "INTERNAL STRUCTURE" || e.target.textContent == "SURFACE GEOLOGY" || e.target.textContent == "01"  || e.target.textContent == "02" || e.target.textContent == "03"
+    || e.target == overviewElt || e.target == internalStructureElt || e.target == surfaceGeologyElt){
         readJsonFile(file).then(function (response) {
             let planet = JSON.parse(response);
             let mainTitle = document.querySelector("#main-title");
@@ -140,7 +144,7 @@ choiceView.addEventListener("click", (e) =>{
                     break;
             }
             let zoomImg = document.querySelector("#img-geology");
-            if (e.target.textContent == "OVERVIEW") {
+            if (e.target.textContent == "OVERVIEW" || e.target.textContent == "01" || e.target == overviewElt) {
 
                 if (zoomImg.style.display != "none") {
                     zoomImg.style.display = "none";
@@ -150,7 +154,7 @@ choiceView.addEventListener("click", (e) =>{
                 planetText = planet[cursor].overview.content;
                 planetWikipedia = planet[cursor].overview.source;
 
-            } else if (e.target.textContent == "INTERNAL STRUCTURE") {
+            } else if (e.target.textContent == "INTERNAL STRUCTURE" || e.target.textContent == "02" || e.target == internalStructureElt) {
 
                 if (zoomImg.style.display != "none") {
                     zoomImg.style.display = "none";
@@ -160,7 +164,7 @@ choiceView.addEventListener("click", (e) =>{
                 planetText = planet[cursor].structure.content;
                 planetWikipedia = planet[cursor].structure.source;
 
-            } else if (e.target.textContent == "SURFACE GEOLOGY") {
+            } else if (e.target.textContent == "SURFACE GEOLOGY" || e.target.textContent == "03" || e.target == surfaceGeologyElt) {
                 if (zoomImg.style.display == "none") {
                     zoomImg.style.display = "block";
                 }
