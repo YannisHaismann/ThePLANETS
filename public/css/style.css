@@ -287,9 +287,18 @@ ol li {
     grid-row: 1/2;
   }
   .mid-content > .side-description > .description-text {
+    height: 150px;
     margin-right: 100px;
     font-weight: normal;
   }
+}
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .mid-content > .side-description > .description-text {
+    height: 200px;
+    margin-right: 50px;
+  }
+}
+@media (min-width: 1025px) {
   .mid-content > .side-description > .wikipedia-link {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -304,11 +313,15 @@ ol li {
     top: 2px;
     left: 5px;
   }
+}
+@media (min-width: 1025px) {
   .mid-content > .choice-view {
     grid-column: 4/6;
     grid-row: 2/3;
     width: 350px;
   }
+}
+@media (min-width: 1025px) {
   .mid-content > .choice-view {
     font-weight: bold;
   }
@@ -317,7 +330,8 @@ ol li {
     margin: 10px 0px 10px 0px;
     height: 48px;
   }
-
+}
+@media (min-width: 1025px) {
   li.btn-choice {
     display: flex;
   }

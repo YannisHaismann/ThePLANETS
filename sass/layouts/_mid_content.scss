@@ -30,8 +30,13 @@
       grid-column: 4 / 6;
       grid-row: 1 / 2;
       & > .description-text{
+        height: 150px;
         margin-right: 100px;
         font-weight: normal;
+        @media(max-width: 1400px){
+          height: 200px;
+          margin-right: 50px;
+        }
       }
       & > .wikipedia-link{
         color: rgba(355, 355, 355, 0.7);
