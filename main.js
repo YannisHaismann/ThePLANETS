@@ -102,6 +102,7 @@ nav.addEventListener("click", (e) =>{
 
 let choiceView = document.querySelector("#choice-view");
 choiceView.addEventListener("click", (e) =>{
+    console.log(e.target);
     if(e.target.textContent == "OVERVIEW" || e.target.textContent == "INTERNAL STRUCTURE" || e.target.textContent == "SURFACE GEOLOGY"){
         readJsonFile(file).then(function (response) {
             let planet = JSON.parse(response);
@@ -122,6 +123,7 @@ choiceView.addEventListener("click", (e) =>{
                     cursor = 3;
                     break;
                 case "JUPITER":
+                    cursor = 4;
                     break;
                 case "SATURN":
                     cursor = 5;
