@@ -297,11 +297,6 @@ ol li {
 .wikipedia-link > a:hover {
   color: white;
 }
-.wikipedia-link > img {
-  position: relative;
-  top: 2px;
-  left: 5px;
-}
 
 .main-img {
   width: 100%;
@@ -335,6 +330,11 @@ li.btn-choice > div {
   .mid-content > .main-img {
     grid-column: 1/4;
     grid-row: 1/3;
+  }
+  .mid-content > .main-img > img {
+    position: relative;
+    top: 2px;
+    left: 5px;
   }
   .mid-content > .side-description {
     grid-column: 4/6;
@@ -372,8 +372,15 @@ li.btn-choice > div {
     margin-top: 40px;
     height: 500px;
     width: 100%;
+    background-size: 334px;
     grid-row: 1;
     grid-column: 1/3;
+  }
+  .mid-content > .main-img > img {
+    width: 110px;
+    position: relative;
+    top: -60px;
+    left: 5px;
   }
   .mid-content > .side-description {
     margin-left: 40px;
@@ -428,6 +435,12 @@ li.btn-choice > div {
     grid-row: 2/3;
     background-size: 166px;
     margin-top: 20px;
+  }
+  .mid-content > .main-img > img {
+    width: 80px;
+    position: relative;
+    top: -200px;
+    left: 5px;
   }
   .mid-content > .side-description {
     grid-row: 3/4;

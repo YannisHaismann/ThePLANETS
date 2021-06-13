@@ -14,8 +14,8 @@ function readJsonFile(file){
         rawFile.send();
     })
 }
-var tablet = 1025;
-var phone = 376;
+var tablet  = 1025;
+var phone   = 376;
 var file    = 'data.json';
 let nav     = document.querySelector("#nav");
 
@@ -27,7 +27,7 @@ nav.addEventListener("click", (e) =>{
 
         let planet = JSON.parse(response);
         let planetImg, planetName, planetGeologyImg, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
-        planetRadius, planetAverageTemp, planetWidthImg;
+        planetRadius, planetAverageTemp, width, geologyWidth;
         let cursor = 0;
         let windowWidth = window.innerWidth;
 
@@ -77,6 +77,7 @@ nav.addEventListener("click", (e) =>{
         }else if(windowWidth < phone){
             width = width / 3;
         }
+        geologyWidth = width / 2;
     if(cursor >= 0) {
         planetImg = planet[cursor].images.planet;
         planetGeologyImg = planet[cursor].images.geology;
@@ -94,6 +95,7 @@ nav.addEventListener("click", (e) =>{
 
         let geologyImg = document.querySelector("#img-geology");
         geologyImg.setAttribute("src", planetGeologyImg);
+        geologyImg.style.width = geologyWidth + "px";
 
         let mainTitle = document.querySelector("#main-title");
         mainTitle.textContent = planetName.toUpperCase();
@@ -188,9 +190,7 @@ choiceView.addEventListener("click", (e) =>{
                 planetWikipedia = planet[cursor].structure.source;
 
             } else if (e.target.textContent == "SURFACE GEOLOGY" || e.target.textContent == "03" || e.target == surfaceGeologyElt || e.target == surface || e.target == geology) {
-                if (zoomImg.style.display == "none") {
                     zoomImg.style.display = "block";
-                }
 
                 planetImg = planet[cursor].images.planet;
                 planetText = planet[cursor].geology.content;

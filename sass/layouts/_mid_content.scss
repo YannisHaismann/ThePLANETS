@@ -15,11 +15,6 @@
       color: white;
     }
   }
-  & > img{
-    position: relative;
-    top: 2px;
-    left: 5px;
-  }
 }
 
 .main-img{
@@ -55,6 +50,11 @@ li.btn-choice{
     & > .main-img{
       grid-column: 1 / 4;
       grid-row: 1 / 3;
+      & > img{
+        position: relative;
+        top: 2px;
+        left: 5px;
+      }
     }
     & > .side-description{
       grid-column: 4 / 6;
@@ -90,9 +90,15 @@ li.btn-choice{
       margin-top: 40px;
       height: 500px;
       width: 100%;
-      //background-size:;
+      background-size: 334px;
       grid-row: 1;
       grid-column: 1 / 3;
+      & > img{
+        width: 110px;
+          position: relative;
+          top: -60px;
+          left: 5px;
+      }
     }
     & > .side-description{
       margin-left: 40px;
@@ -151,6 +157,12 @@ li.btn-choice{
       grid-row: 2 / 3;
       background-size: 166px;
       margin-top: 20px;
+      & > img{
+        width: 80px;
+        position: relative;
+        top: -200px;
+        left: 5px;
+      }
     }
     & > .side-description{
       grid-row: 3 / 4;
