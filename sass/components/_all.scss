@@ -19,10 +19,15 @@
 @media (max-width: $tablet) and (min-width: $phone) {
   .choice-view{
     & > li {
+      border: 1px solid $slightlydarkblue;
       margin: 20px 0px 10px 0px;
       height: 36px;
       width: 300px;
+      padding: 5px;
       font-size: 11px;
+      & > .btn-choice-text{
+        font-weight: bold;
+      }
     }
   }
 }

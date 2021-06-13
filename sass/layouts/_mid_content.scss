@@ -55,7 +55,6 @@ li.btn-choice{
     & > .main-img{
       grid-column: 1 / 4;
       grid-row: 1 / 3;
-      background-size: 50%;
     }
     & > .side-description{
       grid-column: 4 / 6;
@@ -88,7 +87,8 @@ li.btn-choice{
     grid-template-columns: 1fr 1fr;
     grid-templates-rows: 1fr 1fr;
     & > .main-img{
-      height: 610px;
+      margin-top: 40px;
+      height: 500px;
       width: 100%;
       //background-size:;
       grid-row: 1;
@@ -100,6 +100,7 @@ li.btn-choice{
       grid-row:  2;
       & > h1{
         margin: 0px 0px 30px;
+        font-size: 64px;
       }
       & > .description-text{
         font-size: 12px;
@@ -125,7 +126,7 @@ li.btn-choice{
   .mid-content {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 70px 235px 1fr;
 
     & > .choice-view {
       border-bottom: 1px solid $lowblue;
@@ -144,6 +145,20 @@ li.btn-choice{
         & > .number-choice {
           display: none;
         }
+      }
+    }
+    & > .main-img{
+      grid-row: 2 / 3;
+      background-size: 166px;
+      margin-top: 20px;
+    }
+    & > .side-description{
+      grid-row: 3 / 4;
+      text-align: center;
+      margin: 0px 15px 0px 15px;
+      & > h1{
+        font-size: 65px;
+        font-weight: normal;
       }
     }
   }

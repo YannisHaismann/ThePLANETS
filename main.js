@@ -75,7 +75,7 @@ nav.addEventListener("click", (e) =>{
         if(windowWidth > phone && windowWidth < tablet){
             width = (width / 3) * 2;
         }else if(windowWidth < phone){
-            width = width / 3
+            width = width / 3;
         }
     if(cursor >= 0) {
         planetImg = planet[cursor].images.planet;
