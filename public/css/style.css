@@ -277,6 +277,11 @@ ol li {
     height: 100%;
     background-position: 50% 25%;
   }
+  .mid-content > .main-img > img {
+    width: 200px;
+    margin: auto;
+    margin-top: 320px;
+  }
   .mid-content > .side-description {
     grid-column: 4/6;
     grid-row: 1/2;

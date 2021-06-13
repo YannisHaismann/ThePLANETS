@@ -22,7 +22,7 @@ nav.addEventListener("click", (e) =>{
     readJsonFile(file).then(function (response){
 
         let planet = JSON.parse(response);
-        let planetImg, planetName, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
+        let planetImg, planetName, planetGeologyImg, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
         planetRadius, planetAverageTemp;
         let cursor = 0;
 
@@ -61,6 +61,7 @@ nav.addEventListener("click", (e) =>{
         }
     if(cursor >= 0) {
         planetImg = planet[cursor].images.planet;
+        planetGeologyImg = planet[cursor].images.geology;
         planetName = planet[cursor].name;
         planetDescription = planet[cursor].overview.content;
         planetWikipedia = planet[cursor].overview.source;
@@ -71,6 +72,9 @@ nav.addEventListener("click", (e) =>{
 
         let mainImg = document.querySelector("#main-img");
         mainImg.style.backgroundImage = "url(" + planetImg + ")";
+
+        let geologyImg = document.querySelector("#img-geology");
+        geologyImg.setAttribute("src", planetGeologyImg);
 
         let mainTitle = document.querySelector("#main-title");
         mainTitle.textContent = planetName.toUpperCase();

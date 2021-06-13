@@ -20,6 +20,11 @@
       width: 100%;
       height: 100%;
       background-position: 50% 25%;
+      & > img{
+        width: 200px;
+        margin: auto;
+        margin-top: 320px;
+      }
     }
     & > .side-description{
       grid-column: 4 / 6;
