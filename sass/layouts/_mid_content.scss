@@ -1,12 +1,50 @@
+//GENERAL
+.main-img{
+  background-image: url("../../assets/planet-earth.svg");
+  background-repeat: no-repeat;
+  & > img{
+    display: none;
+  }
+}
+
+.wikipedia-link{
+  color: rgba(355, 355, 355, 0.7);
+  & > a{
+    color: rgba(355, 355, 355, 0.7);
+    &:hover{
+      color: white;
+    }
+  }
+  & > img{
+    position: relative;
+    top: 2px;
+    left: 5px;
+  }
+}
+
+.main-img{
+  width: 100%;
+  height: 100%;
+  background-position: 50% 25%;
+  & > img{
+    width: 200px;
+    margin: auto;
+    margin-top: 320px;
+  }
+}
+
+li.btn-choice{
+  display: flex;
+  & > div{
+    margin: auto 0px auto 30px;
+  }
+}
+
 //DESKTOP
 @media (min-width: $tablet) {
 
-  .main-img{
-    background-image: url("../../assets/planet-earth.svg");
-    background-repeat: no-repeat;
-    & > img{
-      display: none;
-    }
+  .internal, .geology{
+    display: inline;
   }
 
   .mid-content{
@@ -17,14 +55,6 @@
     & > .main-img{
       grid-column: 1 / 4;
       grid-row: 1 / 3;
-      width: 100%;
-      height: 100%;
-      background-position: 50% 25%;
-      & > img{
-        width: 200px;
-        margin: auto;
-        margin-top: 320px;
-      }
     }
     & > .side-description{
       grid-column: 4 / 6;
@@ -38,41 +68,80 @@
           margin-right: 50px;
         }
       }
-      & > .wikipedia-link{
-        color: rgba(355, 355, 355, 0.7);
-        & > a{
-          color: rgba(355, 355, 355, 0.7);
-          &:hover{
-            color: white;
-          }
-        }
-        & > img{
-          position: relative;
-          top: 2px;
-          left: 5px;
-        }
-      }
     }
     & > .choice-view{
       grid-column: 4 / 6;
       grid-row: 2 / 3;
-      width: 350px;
+    }
+  }
+}
+
+//TABLET
+@media (min-width: $phone) and (max-width: $tablet){
+  .internal, .geology{
+    display: inline;
+  }
+
+  .mid-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-templates-rows: 1fr 1fr;
+    & > .main-img{
+      height: 610px;
+      grid-row: 1;
+      grid-column: 1 / 3;
+    }
+    & > .side-description{
+      margin-left: 40px;
+      margin-right: 10px;
+      grid-row:  2;
+      & > h1{
+        margin: 0px 0px 30px;
+      }
+      & > .description-text{
+        font-size: 12px;
+      }
     }
     & > .choice-view{
-      font-weight: bold;
+      grid-row: 2;
+      margin: 80px auto 0px auto;
       & > li{
-        font-size: 12px;
-        margin: 10px 0px 10px 0px;
-        height: 48px;
+        margin-top: 20px;
       }
     }
   }
+}
 
-  li.btn-choice{
-    display: flex;
-    & > div{
-      margin: auto 0px auto 30px;
-    }
+//PHONE
+@media (max-width: $phone){
+
+  .internal, .geology{
+    display: none;
   }
 
+  .mid-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    & > .choice-view {
+      border-bottom: 1px solid $lowblue;
+      height: 60px;
+      display: flex;
+      margin: 0px;
+      grid-column: 1;
+      grid-row: 1 / 2;
+      justify-content: space-around;
+      & > li.btn-choice{
+        height: 100%;
+        width: 30%;
+        & > div{
+          margin: auto;
+        }
+        & > .number-choice {
+          display: none;
+        }
+      }
+    }
+  }
 }

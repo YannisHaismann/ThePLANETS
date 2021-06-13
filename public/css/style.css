@@ -31,11 +31,30 @@ p {
   line-height: 25px;
 }
 
-.choice-view li {
-  border: 1px solid #38384f;
-  padding: 2px;
+@media (min-width: 1025px) {
+  .choice-view {
+    font-weight: bold;
+  }
+  .choice-view > li {
+    border: 1px solid #38384f;
+    padding: 2px;
+    font-size: 12px;
+    margin: 10px 0px 10px 0px;
+    height: 48px;
+    width: 350px;
+  }
+  .choice-view > li > .number-choice {
+    font-weight: normal;
+  }
 }
-
+@media (max-width: 1025px) and (min-width: 376px) {
+  .choice-view > li {
+    margin: 20px 0px 10px 0px;
+    height: 36px;
+    width: 300px;
+    font-size: 11px;
+  }
+}
 body {
   color: white;
   background-image: url("../../assets/figmaBackground.png");
@@ -192,6 +211,7 @@ ol li {
   }
   nav > .nav {
     grid-column: span 2;
+    display: none;
   }
   nav > .nav > li {
     display: grid;
@@ -255,13 +275,50 @@ ol li {
     background-color: #419ebb;
   }
 }
+.main-img {
+  background-image: url("../../assets/planet-earth.svg");
+  background-repeat: no-repeat;
+}
+.main-img > img {
+  display: none;
+}
+
+.wikipedia-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.wikipedia-link > a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.wikipedia-link > a:hover {
+  color: white;
+}
+.wikipedia-link > img {
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  background-position: 50% 25%;
+}
+.main-img > img {
+  width: 200px;
+  margin: auto;
+  margin-top: 320px;
+}
+
+li.btn-choice {
+  display: flex;
+}
+li.btn-choice > div {
+  margin: auto 0px auto 30px;
+}
+
 @media (min-width: 1025px) {
-  .main-img {
-    background-image: url("../../assets/planet-earth.svg");
-    background-repeat: no-repeat;
-  }
-  .main-img > img {
-    display: none;
+  .internal, .geology {
+    display: inline;
   }
 
   .mid-content {
@@ -273,14 +330,6 @@ ol li {
   .mid-content > .main-img {
     grid-column: 1/4;
     grid-row: 1/3;
-    width: 100%;
-    height: 100%;
-    background-position: 50% 25%;
-  }
-  .mid-content > .main-img > img {
-    width: 200px;
-    margin: auto;
-    margin-top: 320px;
   }
   .mid-content > .side-description {
     grid-column: 4/6;
@@ -299,44 +348,73 @@ ol li {
   }
 }
 @media (min-width: 1025px) {
-  .mid-content > .side-description > .wikipedia-link {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .mid-content > .side-description > .wikipedia-link > a {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .mid-content > .side-description > .wikipedia-link > a:hover {
-    color: white;
-  }
-  .mid-content > .side-description > .wikipedia-link > img {
-    position: relative;
-    top: 2px;
-    left: 5px;
-  }
-}
-@media (min-width: 1025px) {
   .mid-content > .choice-view {
     grid-column: 4/6;
     grid-row: 2/3;
-    width: 350px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 376px) and (max-width: 1025px) {
+  .internal, .geology {
+    display: inline;
+  }
+
+  .mid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-templates-rows: 1fr 1fr;
+  }
+  .mid-content > .main-img {
+    height: 610px;
+    grid-row: 1;
+    grid-column: 1/3;
+  }
+  .mid-content > .side-description {
+    margin-left: 40px;
+    margin-right: 10px;
+    grid-row: 2;
+  }
+  .mid-content > .side-description > h1 {
+    margin: 0px 0px 30px;
+  }
+  .mid-content > .side-description > .description-text {
+    font-size: 12px;
+  }
   .mid-content > .choice-view {
-    font-weight: bold;
+    grid-row: 2;
+    margin: 80px auto 0px auto;
   }
   .mid-content > .choice-view > li {
-    font-size: 12px;
-    margin: 10px 0px 10px 0px;
-    height: 48px;
+    margin-top: 20px;
   }
 }
-@media (min-width: 1025px) {
-  li.btn-choice {
-    display: flex;
+@media (max-width: 376px) {
+  .internal, .geology {
+    display: none;
   }
-  li.btn-choice > div {
-    margin: auto 0px auto 30px;
+
+  .mid-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .mid-content > .choice-view {
+    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
+    height: 60px;
+    display: flex;
+    margin: 0px;
+    grid-column: 1;
+    grid-row: 1/2;
+    justify-content: space-around;
+  }
+  .mid-content > .choice-view > li.btn-choice {
+    height: 100%;
+    width: 30%;
+  }
+  .mid-content > .choice-view > li.btn-choice > div {
+    margin: auto;
+  }
+  .mid-content > .choice-view > li.btn-choice > .number-choice {
+    display: none;
   }
 }
 

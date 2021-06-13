@@ -1,4 +1,28 @@
-.choice-view li{
-  border: 1px solid $slightlydarkblue;
-  padding: 2px;
+@media (min-width: $tablet) {
+  .choice-view {
+    font-weight: bold;
+
+    & > li {
+      border: 1px solid $slightlydarkblue;
+      padding: 2px;
+      font-size: 12px;
+      margin: 10px 0px 10px 0px;
+      height: 48px;
+      width: 350px;
+
+      & > .number-choice {
+        font-weight: normal;
+      }
+    }
+  }
+}
+@media (max-width: $tablet) and (min-width: $phone) {
+  .choice-view{
+    & > li {
+      margin: 20px 0px 10px 0px;
+      height: 36px;
+      width: 300px;
+      font-size: 11px;
+    }
+  }
 }

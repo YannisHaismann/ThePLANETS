@@ -139,6 +139,7 @@
     }
     & > .nav{
       grid-column: span 2;
+      display: none;
       & > li {
         display: grid;
         grid-template-columns: 50px 140px 1fr 1fr 1fr 1fr;
