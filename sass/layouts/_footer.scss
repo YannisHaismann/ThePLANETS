@@ -1,0 +1,94 @@
+//GENERAL
+.footer-content{
+  & > div{
+    border: 1px solid $lowblue;
+    & > h4{
+      font-weight: normal;
+    }
+    & > p{
+      font-family: Antonio;
+      font-size: 40px;
+    }
+  }
+}
+//DESKTOP
+@media (min-width: $tablet) {
+  .footer-content{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 70px;
+    & > div{
+      width: 300px;
+      padding: 10px 150px 10px 40px;
+      @media (min-width: 2500px){
+        width: 360px;
+      }
+      @media (min-width: 1750px) and (max-width: 2500px){
+        width: 200px;
+      }
+      @media (min-width: 1350px) and (max-width: 1750px){
+        width: 180px;
+        padding-right: 70px;
+        padding-left: 20px;
+      }
+      @media (min-width: 1025px) and (max-width: 1350px){
+        width: 180px;
+        padding-right: 30px;
+      }
+    }
+  }
+}
+
+
+//TABLET
+@media (min-width: $phone) and (max-width: $tablet) {
+  .footer-content{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    & > div{
+      width: 130px;
+      padding: 5px 50px 5px 20px;
+      @media (max-width: 860px) and (min-width: 675px){
+        padding-right: 30px;
+        width: 110px;
+      }
+      @media (max-width: 675px) and (min-width: 500px){
+        padding-right: 20px;
+        padding-left: 10px;
+        width: 100px;
+      }
+      & > h4{
+        font-size: 8px;
+      }
+      & > p{
+        margin-top: 0px;
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+//PHONE
+@media (max-width: $phone) {
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 30px 20px;
+    & > div{
+      margin: 5px 0px 5px 0px;
+      height: 45px;
+      display: flex;
+      justify-content: space-between;
+      & > h4{
+        font-size: 8px;
+        margin: auto 0px auto 10px;
+      }
+      & > p {
+        font-size: 22px;
+        margin: auto 10px auto 0px;
+      }
+    }
+  }
+}

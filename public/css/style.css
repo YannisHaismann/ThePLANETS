@@ -309,10 +309,6 @@ ol li {
   margin-top: 320px;
 }
 
-.active:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
 li.btn-choice {
   display: flex;
 }
@@ -329,8 +325,12 @@ li.btn-choice > div {
     display: inline;
   }
 
+  .active:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
   .mid-content {
-    margin: 50px 100px 50px 100px;
+    margin: 50px 100px 0px 100px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(5, 1fr);
@@ -370,6 +370,10 @@ li.btn-choice > div {
 @media (min-width: 376px) and (max-width: 1025px) {
   .internal, .geology {
     display: inline;
+  }
+
+  .active:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
   }
 
   .mid-content {
@@ -414,6 +418,10 @@ li.btn-choice > div {
 @media (max-width: 376px) {
   .internal, .geology {
     display: none;
+  }
+
+  .wikipedia-link {
+    margin-top: 30px;
   }
 
   .mid-content {
@@ -466,6 +474,108 @@ li.btn-choice > div {
   .mid-content > .side-description > h1 {
     font-size: 65px;
     font-weight: normal;
+  }
+}
+.footer-content > div {
+  border: 1px solid rgba(45, 104, 240, 0.2);
+}
+.footer-content > div > h4 {
+  font-weight: normal;
+}
+.footer-content > div > p {
+  font-family: Antonio;
+  font-size: 40px;
+}
+
+@media (min-width: 1025px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 70px;
+  }
+  .footer-content > div {
+    width: 300px;
+    padding: 10px 150px 10px 40px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 2500px) {
+  .footer-content > div {
+    width: 360px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1750px) and (max-width: 2500px) {
+  .footer-content > div {
+    width: 200px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1350px) and (max-width: 1750px) {
+  .footer-content > div {
+    width: 180px;
+    padding-right: 70px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1025px) and (max-width: 1350px) {
+  .footer-content > div {
+    width: 180px;
+    padding-right: 30px;
+  }
+}
+@media (min-width: 376px) and (max-width: 1025px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  .footer-content > div {
+    width: 130px;
+    padding: 5px 50px 5px 20px;
+  }
+}
+@media (min-width: 376px) and (max-width: 1025px) and (max-width: 860px) and (min-width: 675px) {
+  .footer-content > div {
+    padding-right: 30px;
+    width: 110px;
+  }
+}
+@media (min-width: 376px) and (max-width: 1025px) and (max-width: 675px) and (min-width: 500px) {
+  .footer-content > div {
+    padding-right: 20px;
+    padding-left: 10px;
+    width: 100px;
+  }
+}
+@media (min-width: 376px) and (max-width: 1025px) {
+  .footer-content > div > h4 {
+    font-size: 8px;
+  }
+}
+@media (min-width: 376px) and (max-width: 1025px) {
+  .footer-content > div > p {
+    margin-top: 0px;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 376px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 30px 20px;
+  }
+  .footer-content > div {
+    margin: 5px 0px 5px 0px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-content > div > h4 {
+    font-size: 8px;
+    margin: auto 0px auto 10px;
+  }
+  .footer-content > div > p {
+    font-size: 22px;
+    margin: auto 10px auto 0px;
   }
 }
 

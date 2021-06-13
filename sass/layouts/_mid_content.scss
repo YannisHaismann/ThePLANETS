@@ -28,9 +28,6 @@
   }
 }
 
-  .active:hover{
-    background-color: rgba(255, 255, 255, 0.1)!important;
-  }
 li.btn-choice{
   display: flex;
   & > div{
@@ -47,9 +44,11 @@ li.btn-choice{
   .internal, .geology{
     display: inline;
   }
-
+  .active:hover{
+    background-color: rgba(255, 255, 255, 0.1)!important;
+  }
   .mid-content{
-    margin:  50px 100px 50px 100px;
+    margin:  50px 100px 0px 100px;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(5, 1fr);
@@ -88,7 +87,9 @@ li.btn-choice{
   .internal, .geology{
     display: inline;
   }
-
+  .active:hover{
+    background-color: rgba(255, 255, 255, 0.1)!important;
+  }
   .mid-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -135,7 +136,9 @@ li.btn-choice{
   .internal, .geology{
     display: none;
   }
-
+  .wikipedia-link{
+    margin-top: 30px;
+  }
   .mid-content {
     display: grid;
     grid-template-columns: 1fr;
