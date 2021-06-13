@@ -108,6 +108,10 @@ nav.addEventListener("click", (e) =>{
             surfaceGeology.style.borderBottom       = basicBorderBottom;
             internalStructure.style.borderBottom    = basicBorderBottom;
             overview.style.borderBottom             = basicBorderBottom;
+            overview.classList.add("active");
+            internalStructure.classList.add("active");
+            surfaceGeology.classList.add("active");
+            overview.classList.remove("active");
         }else{
             internalStructure.style.backgroundColor = transparent;
             surfaceGeology.style.backgroundColor    = transparent;
@@ -230,6 +234,9 @@ choiceView.addEventListener("click", (e) =>{
                 surfaceGeology.style.borderBottom       = basicBorderBottom;
                 internalStructure.style.borderBottom    = basicBorderBottom;
                 overview.style.borderBottom             = basicBorderBottom;
+                overview.classList.add("active");
+                internalStructure.classList.add("active");
+                surfaceGeology.classList.add("active");
             }else{
                 overview.style.color                    = lowWhite;
                 surfaceGeology.style.color              = lowWhite;
@@ -247,6 +254,7 @@ choiceView.addEventListener("click", (e) =>{
                 }
                 if(windowWidth > phone){
                     overview.style.backgroundColor          = color;
+                    overview.classList.remove("active");
                 }else{
                     overview.style.color                    = white;
                     overview.style.borderBottom             = "4px solid " + color;
@@ -264,6 +272,7 @@ choiceView.addEventListener("click", (e) =>{
                 }
                 if(windowWidth > phone){
                     internalStructure.style.backgroundColor = color;
+                    internalStructure.classList.remove("active");
                 }else{
                     internalStructure.style.color           = white;
                     internalStructure.style.borderBottom    = "4px solid " + color;
@@ -278,6 +287,7 @@ choiceView.addEventListener("click", (e) =>{
 
                 if(windowWidth > phone){
                     surfaceGeology.style.backgroundColor    = color;
+                    surfaceGeology.classList.remove("active");
                 }else{
                     surfaceGeology.style.color              = white;
                     surfaceGeology.style.borderBottom       = "4px solid " + color;

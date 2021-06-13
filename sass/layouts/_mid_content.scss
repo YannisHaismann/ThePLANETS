@@ -28,11 +28,11 @@
   }
 }
 
+  .active:hover{
+    background-color: rgba(255, 255, 255, 0.1)!important;
+  }
 li.btn-choice{
   display: flex;
-  &:hover{
-    background-color: rgba(255, 255, 255, 0.1);
-  }
   & > div{
     margin: auto 0px auto 30px;
   }

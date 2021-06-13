@@ -309,11 +309,12 @@ ol li {
   margin-top: 320px;
 }
 
+.active:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 li.btn-choice {
   display: flex;
-}
-li.btn-choice:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 li.btn-choice > div {
   margin: auto 0px auto 30px;
