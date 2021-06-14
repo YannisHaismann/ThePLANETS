@@ -62,7 +62,7 @@ p {
 }
 body {
   color: white;
-  background-image: url("../../assets/figmaBackground.png");
+  background: url("../../assets/background-stars.svg"), #070724;
   margin: 0px;
 }
 
