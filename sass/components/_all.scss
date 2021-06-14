@@ -16,7 +16,7 @@
     }
   }
 }
-@media (max-width: $tablet) and (min-width: $phone) {
+@media (max-width: $tablet) {
   .choice-view{
     & > li {
       border: 1px solid $slightlydarkblue;
