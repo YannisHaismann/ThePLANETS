@@ -1,110 +1,5 @@
-//DESKTOP
-@media (min-width: $tablet) {
-  .hamburger-icon{
-    display: none;
-    & + ol {
-      display: flex !important;
-    }
-  }
-  .icon-chevron{
-    display: none;
-  }
-
-  nav{
-    border-bottom: 1px solid $lowblue;
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-    & > ol {
-      display: flex;
-      justify-content: space-around;
-      width: 50%;
-      height: 100px;
-      margin: 0px;
-      & > li{
-        font-weight: bold;
-        margin: 0px 5px 0px 5px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows:  1fr 1fr 1fr;
-        font-size: 12px;
-        & > span{
-          margin: auto;
-          &:hover + div{
-            background-color: $lightblue;
-            transform: scaleX(1);
-            transition-duration: 300ms;
-            transition-property: transform;
-          }
-        }
-        & > div{
-          transform: scaleX(0);
-          transition-duration: 200ms;
-          height: 2px;
-          width: 100%;
-          grid-row-start: 1;
-          border-radius: 10px;
-        }
-      }
-    }
-    & > .top-nav{
-      margin: 20px 30px 20px 30px;
-      & > h2{
-        margin: auto;
-      }
-    }
-  }
-}
-
-//TABLET
-@media (min-width: $phone) and (max-width: $tablet) {
-  .hamburger-icon{
-    display: none;
-    & + ol {
-      display: flex !important;
-    }
-  }
-  .icon-chevron{
-    display: none;
-  }
-
-  nav{
-    border-bottom: 1px solid $lowblue;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    text-align: center;
-    & > ol {
-      display: flex;
-      justify-content: space-around;
-      margin: 0px;
-      flex-wrap: wrap;
-      & > li{
-        margin: 0px 10px 0px 10px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows:  1fr 1fr 1fr;
-        & > span{
-          margin: auto;
-        }
-        & > div{
-          height: 2px;
-          width: 100%;
-          grid-row-start: 1;
-          border-radius: 10px;
-        }
-      }
-    }
-    & > top-nav{
-      margin: 20px 30px 20px 30px;
-      & > h2{
-        margin: auto;
-      }
-    }
-  }
-}
 //PHONE
-@media(max-width: $phone) {
+@media (max-width: $phone) {
   .hamburger-icon {
     display: block;
     width: 26px;
@@ -196,6 +91,113 @@
   #neptune > div{
     background-color: $neptune;
   }
-
 }
 
+
+//TABLET
+@media (min-width: $phone) and (max-width: $tablet) {
+  .hamburger-icon{
+    display: none;
+    & + ol {
+      display: flex !important;
+    }
+  }
+  .icon-chevron{
+    display: none;
+  }
+
+  nav{
+    border-bottom: 1px solid $lowblue;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    & > ol {
+      display: flex;
+      justify-content: space-around;
+      margin: 0px;
+      flex-wrap: wrap;
+      & > li{
+        margin: 0px 10px 0px 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr;
+        & > span{
+          margin: auto;
+        }
+        & > div{
+          height: 2px;
+          width: 100%;
+          grid-row-start: 1;
+          border-radius: 10px;
+        }
+      }
+    }
+    & > top-nav{
+      margin: 20px 30px 20px 30px;
+      & > h2{
+        margin: auto;
+      }
+    }
+  }
+}
+
+
+
+//DESKTOP
+@media (min-width: $tablet) {
+  .hamburger-icon{
+    display: none;
+    & + ol {
+      display: flex !important;
+    }
+  }
+  .icon-chevron{
+    display: none;
+  }
+
+  nav{
+    border-bottom: 1px solid $lowblue;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    & > ol {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      height: 100px;
+      margin: 0px;
+      & > li{
+        font-weight: bold;
+        margin: 0px 5px 0px 5px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr;
+        font-size: 12px;
+        & > span{
+          margin: auto;
+          &:hover + div{
+            background-color: $lightblue;
+            transform: scaleX(1);
+            transition-duration: 300ms;
+            transition-property: transform;
+          }
+        }
+        & > div{
+          transform: scaleX(0);
+          transition-duration: 200ms;
+          height: 2px;
+          width: 100%;
+          grid-row-start: 1;
+          border-radius: 10px;
+        }
+      }
+    }
+    & > .top-nav{
+      margin: 20px 30px 20px 30px;
+      & > h2{
+        margin: auto;
+      }
+    }
+  }
+}

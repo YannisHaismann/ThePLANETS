@@ -11,34 +11,29 @@
     }
   }
 }
-//DESKTOP
-@media (min-width: $tablet) {
+
+//PHONE
+@media (max-width: $phone) {
   .footer-content{
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 70px;
+    flex-direction: column;
+    margin: 20px 20px 30px 20px;
     & > div{
-      width: 300px;
-      padding: 10px 150px 10px 40px;
-      @media (min-width: 2500px){
-        width: 360px;
+      margin: 5px 0px 5px 0px;
+      height: 45px;
+      display: flex;
+      justify-content: space-between;
+      & > h4{
+        font-size: 8px;
+        margin: auto 0px auto 10px;
       }
-      @media (min-width: 1750px) and (max-width: 2500px){
-        width: 200px;
-      }
-      @media (min-width: 1350px) and (max-width: 1750px){
-        width: 180px;
-        padding-right: 70px;
-        padding-left: 20px;
-      }
-      @media (min-width: 1025px) and (max-width: 1350px){
-        width: 180px;
-        padding-right: 30px;
+      & > p {
+        font-size: 22px;
+        margin: auto 10px auto 0px;
       }
     }
   }
 }
-
 
 //TABLET
 @media (min-width: $phone) and (max-width: $tablet) {
@@ -70,25 +65,32 @@
   }
 }
 
-//PHONE
-@media  (max-width: $phone) {
+//DESKTOP
+@media (min-width: $tablet) {
   .footer-content{
     display: flex;
-    flex-direction: column;
-    margin: 20px 20px 30px 20px;
+    justify-content: space-around;
+    margin-bottom: 70px;
     & > div{
-      margin: 5px 0px 5px 0px;
-      height: 45px;
-      display: flex;
-      justify-content: space-between;
-      & > h4{
-        font-size: 8px;
-        margin: auto 0px auto 10px;
+      width: 300px;
+      padding: 10px 150px 10px 40px;
+      @media (min-width: 2500px){
+        width: 360px;
       }
-      & > p {
-        font-size: 22px;
-        margin: auto 10px auto 0px;
+      @media (min-width: 1750px) and (max-width: 2500px){
+        width: 200px;
+      }
+      @media (min-width: 1350px) and (max-width: 1750px){
+        width: 180px;
+        padding-right: 70px;
+        padding-left: 20px;
+      }
+      @media (min-width: 1025px) and (max-width: 1350px){
+        width: 180px;
+        padding-right: 30px;
       }
     }
   }
 }
+
+

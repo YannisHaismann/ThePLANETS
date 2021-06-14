@@ -38,98 +38,6 @@ li.btn-choice{
   background-color: rgba(109, 46, 213, 1);
 }
 
-//DESKTOP
-@media (min-width: $tablet) {
-
-  .internal, .geology{
-    display: inline;
-  }
-  .active:hover{
-    background-color: rgba(255, 255, 255, 0.1)!important;
-  }
-  .mid-content{
-    margin:  50px 100px 0px 100px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(5, 1fr);
-    & > .main-img{
-      grid-column: 1 / 4;
-      grid-row: 1 / 3;
-      background-size: 500px;
-      & > img{
-        position: relative;
-        top: 2px;
-        left: 5px;
-      }
-    }
-    & > .side-description{
-      grid-column: 4 / 6;
-      grid-row: 1 / 2;
-      & > .description-text{
-        height: 150px;
-        margin-right: 100px;
-        font-weight: normal;
-        @media(max-width: 1400px){
-          height: 200px;
-          margin-right: 50px;
-        }
-      }
-    }
-    & > .choice-view{
-      grid-column: 4 / 6;
-      grid-row: 2 / 3;
-    }
-  }
-}
-
-//TABLET
-@media (min-width: $phone) and (max-width: $tablet){
-  .internal, .geology{
-    display: inline;
-  }
-  .active:hover{
-    background-color: rgba(255, 255, 255, 0.1)!important;
-  }
-  .mid-content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-templates-rows: 1fr 1fr;
-    & > .main-img{
-      margin-top: 40px;
-      height: 500px;
-      width: 100%;
-      background-size: 334px;
-      grid-row: 1;
-      grid-column: 1 / 3;
-      & > img{
-        width: 110px;
-          position: relative;
-          top: -60px;
-          left: 5px;
-      }
-    }
-    & > .side-description{
-      margin-left: 40px;
-      margin-right: 10px;
-      grid-row:  2;
-      & > h1{
-        margin: 0px 0px 30px;
-        font-size: 64px;
-      }
-      & > .description-text{
-        font-size: 12px;
-      }
-    }
-    & > .choice-view{
-      grid-row: 2;
-      margin: 80px auto 0px auto;
-      & > li{
-        margin-top: 20px;
-      }
-    }
-  }
-}
-
 //PHONE
 @media (max-width: $phone){
 
@@ -192,3 +100,97 @@ li.btn-choice{
     }
   }
 }
+
+//TABLET
+@media (min-width: $phone) and (max-width: $tablet){
+  .internal, .geology{
+    display: inline;
+  }
+  .active:hover{
+    background-color: rgba(255, 255, 255, 0.1)!important;
+  }
+  .mid-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-templates-rows: 1fr 1fr;
+    & > .main-img{
+      margin-top: 40px;
+      height: 500px;
+      width: 100%;
+      background-size: 334px;
+      grid-row: 1;
+      grid-column: 1 / 3;
+      & > img{
+        width: 110px;
+        position: relative;
+        top: -60px;
+        left: 5px;
+      }
+    }
+    & > .side-description{
+      margin-left: 40px;
+      margin-right: 10px;
+      grid-row:  2;
+      & > h1{
+        margin: 0px 0px 30px;
+        font-size: 64px;
+      }
+      & > .description-text{
+        font-size: 12px;
+      }
+    }
+    & > .choice-view{
+      grid-row: 2;
+      margin: 80px auto 0px auto;
+      & > li{
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+//DESKTOP
+@media (min-width: $tablet) {
+
+  .internal, .geology{
+    display: inline;
+  }
+  .active:hover{
+    background-color: rgba(255, 255, 255, 0.1)!important;
+  }
+  .mid-content{
+    margin:  50px 100px 0px 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    & > .main-img{
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
+      background-size: 500px;
+      & > img{
+        position: relative;
+        top: 2px;
+        left: 5px;
+      }
+    }
+    & > .side-description{
+      grid-column: 4 / 6;
+      grid-row: 1 / 2;
+      & > .description-text{
+        height: 150px;
+        margin-right: 100px;
+        font-weight: normal;
+        @media(max-width: 1400px){
+          height: 200px;
+          margin-right: 50px;
+        }
+      }
+    }
+    & > .choice-view{
+      grid-column: 4 / 6;
+      grid-row: 2 / 3;
+    }
+  }
+}
+
+

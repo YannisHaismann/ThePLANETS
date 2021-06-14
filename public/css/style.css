@@ -31,6 +31,19 @@ p {
   line-height: 25px;
 }
 
+@media (min-width: 420px) {
+  .choice-view > li {
+    border: 1px solid #38384f;
+    margin: 20px 0px 10px 0px;
+    height: 36px;
+    width: 300px;
+    padding: 5px;
+    font-size: 11px;
+  }
+  .choice-view > li > .btn-choice-text {
+    font-weight: bold;
+  }
+}
 @media (min-width: 1025px) {
   .choice-view {
     font-weight: bold;
@@ -45,19 +58,6 @@ p {
   }
   .choice-view > li > .number-choice {
     font-weight: normal;
-  }
-}
-@media (max-width: 1025px) and (min-width: 420px) {
-  .choice-view > li {
-    border: 1px solid #38384f;
-    margin: 20px 0px 10px 0px;
-    height: 36px;
-    width: 300px;
-    padding: 5px;
-    font-size: 11px;
-  }
-  .choice-view > li > .btn-choice-text {
-    font-weight: bold;
   }
 }
 body {
@@ -75,110 +75,6 @@ ol li {
   cursor: pointer;
 }
 
-@media (min-width: 1025px) {
-  .hamburger-icon {
-    display: none;
-  }
-  .hamburger-icon + ol {
-    display: flex !important;
-  }
-
-  .icon-chevron {
-    display: none;
-  }
-
-  nav {
-    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-  }
-  nav > ol {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    height: 100px;
-    margin: 0px;
-  }
-  nav > ol > li {
-    font-weight: bold;
-    margin: 0px 5px 0px 5px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    font-size: 12px;
-  }
-  nav > ol > li > span {
-    margin: auto;
-  }
-  nav > ol > li > span:hover + div {
-    background-color: #419ebb;
-    transform: scaleX(1);
-    transition-duration: 300ms;
-    transition-property: transform;
-  }
-  nav > ol > li > div {
-    transform: scaleX(0);
-    transition-duration: 200ms;
-    height: 2px;
-    width: 100%;
-    grid-row-start: 1;
-    border-radius: 10px;
-  }
-  nav > .top-nav {
-    margin: 20px 30px 20px 30px;
-  }
-  nav > .top-nav > h2 {
-    margin: auto;
-  }
-}
-@media (min-width: 420px) and (max-width: 1025px) {
-  .hamburger-icon {
-    display: none;
-  }
-  .hamburger-icon + ol {
-    display: flex !important;
-  }
-
-  .icon-chevron {
-    display: none;
-  }
-
-  nav {
-    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    text-align: center;
-  }
-  nav > ol {
-    display: flex;
-    justify-content: space-around;
-    margin: 0px;
-    flex-wrap: wrap;
-  }
-  nav > ol > li {
-    margin: 0px 10px 0px 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-  nav > ol > li > span {
-    margin: auto;
-  }
-  nav > ol > li > div {
-    height: 2px;
-    width: 100%;
-    grid-row-start: 1;
-    border-radius: 10px;
-  }
-  nav > top-nav {
-    margin: 20px 30px 20px 30px;
-  }
-  nav > top-nav > h2 {
-    margin: auto;
-  }
-}
 @media (max-width: 420px) {
   .hamburger-icon {
     display: block;
@@ -280,6 +176,110 @@ ol li {
     background-color: #419ebb;
   }
 }
+@media (min-width: 420px) and (max-width: 1025px) {
+  .hamburger-icon {
+    display: none;
+  }
+  .hamburger-icon + ol {
+    display: flex !important;
+  }
+
+  .icon-chevron {
+    display: none;
+  }
+
+  nav {
+    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+  }
+  nav > ol {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    flex-wrap: wrap;
+  }
+  nav > ol > li {
+    margin: 0px 10px 0px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  nav > ol > li > span {
+    margin: auto;
+  }
+  nav > ol > li > div {
+    height: 2px;
+    width: 100%;
+    grid-row-start: 1;
+    border-radius: 10px;
+  }
+  nav > top-nav {
+    margin: 20px 30px 20px 30px;
+  }
+  nav > top-nav > h2 {
+    margin: auto;
+  }
+}
+@media (min-width: 1025px) {
+  .hamburger-icon {
+    display: none;
+  }
+  .hamburger-icon + ol {
+    display: flex !important;
+  }
+
+  .icon-chevron {
+    display: none;
+  }
+
+  nav {
+    border-bottom: 1px solid rgba(45, 104, 240, 0.2);
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+  }
+  nav > ol {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 100px;
+    margin: 0px;
+  }
+  nav > ol > li {
+    font-weight: bold;
+    margin: 0px 5px 0px 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 12px;
+  }
+  nav > ol > li > span {
+    margin: auto;
+  }
+  nav > ol > li > span:hover + div {
+    background-color: #419ebb;
+    transform: scaleX(1);
+    transition-duration: 300ms;
+    transition-property: transform;
+  }
+  nav > ol > li > div {
+    transform: scaleX(0);
+    transition-duration: 200ms;
+    height: 2px;
+    width: 100%;
+    grid-row-start: 1;
+    border-radius: 10px;
+  }
+  nav > .top-nav {
+    margin: 20px 30px 20px 30px;
+  }
+  nav > .top-nav > h2 {
+    margin: auto;
+  }
+}
 .main-img {
   background-image: url("../../assets/planet-earth.svg");
   background-repeat: no-repeat;
@@ -320,101 +320,6 @@ li.btn-choice > div {
   background-color: #6d2ed5;
 }
 
-@media (min-width: 1025px) {
-  .internal, .geology {
-    display: inline;
-  }
-
-  .active:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .mid-content {
-    margin: 50px 100px 0px 100px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .mid-content > .main-img {
-    grid-column: 1/4;
-    grid-row: 1/3;
-    background-size: 500px;
-  }
-  .mid-content > .main-img > img {
-    position: relative;
-    top: 2px;
-    left: 5px;
-  }
-  .mid-content > .side-description {
-    grid-column: 4/6;
-    grid-row: 1/2;
-  }
-  .mid-content > .side-description > .description-text {
-    height: 150px;
-    margin-right: 100px;
-    font-weight: normal;
-  }
-}
-@media (min-width: 1025px) and (max-width: 1400px) {
-  .mid-content > .side-description > .description-text {
-    height: 200px;
-    margin-right: 50px;
-  }
-}
-@media (min-width: 1025px) {
-  .mid-content > .choice-view {
-    grid-column: 4/6;
-    grid-row: 2/3;
-  }
-}
-@media (min-width: 420px) and (max-width: 1025px) {
-  .internal, .geology {
-    display: inline;
-  }
-
-  .active:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .mid-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-templates-rows: 1fr 1fr;
-  }
-  .mid-content > .main-img {
-    margin-top: 40px;
-    height: 500px;
-    width: 100%;
-    background-size: 334px;
-    grid-row: 1;
-    grid-column: 1/3;
-  }
-  .mid-content > .main-img > img {
-    width: 110px;
-    position: relative;
-    top: -60px;
-    left: 5px;
-  }
-  .mid-content > .side-description {
-    margin-left: 40px;
-    margin-right: 10px;
-    grid-row: 2;
-  }
-  .mid-content > .side-description > h1 {
-    margin: 0px 0px 30px;
-    font-size: 64px;
-  }
-  .mid-content > .side-description > .description-text {
-    font-size: 12px;
-  }
-  .mid-content > .choice-view {
-    grid-row: 2;
-    margin: 80px auto 0px auto;
-  }
-  .mid-content > .choice-view > li {
-    margin-top: 20px;
-  }
-}
 @media (max-width: 420px) {
   .internal, .geology {
     display: none;
@@ -476,6 +381,101 @@ li.btn-choice > div {
     font-weight: normal;
   }
 }
+@media (min-width: 420px) and (max-width: 1025px) {
+  .internal, .geology {
+    display: inline;
+  }
+
+  .active:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .mid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-templates-rows: 1fr 1fr;
+  }
+  .mid-content > .main-img {
+    margin-top: 40px;
+    height: 500px;
+    width: 100%;
+    background-size: 334px;
+    grid-row: 1;
+    grid-column: 1/3;
+  }
+  .mid-content > .main-img > img {
+    width: 110px;
+    position: relative;
+    top: -60px;
+    left: 5px;
+  }
+  .mid-content > .side-description {
+    margin-left: 40px;
+    margin-right: 10px;
+    grid-row: 2;
+  }
+  .mid-content > .side-description > h1 {
+    margin: 0px 0px 30px;
+    font-size: 64px;
+  }
+  .mid-content > .side-description > .description-text {
+    font-size: 12px;
+  }
+  .mid-content > .choice-view {
+    grid-row: 2;
+    margin: 80px auto 0px auto;
+  }
+  .mid-content > .choice-view > li {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  .internal, .geology {
+    display: inline;
+  }
+
+  .active:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .mid-content {
+    margin: 50px 100px 0px 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .mid-content > .main-img {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    background-size: 500px;
+  }
+  .mid-content > .main-img > img {
+    position: relative;
+    top: 2px;
+    left: 5px;
+  }
+  .mid-content > .side-description {
+    grid-column: 4/6;
+    grid-row: 1/2;
+  }
+  .mid-content > .side-description > .description-text {
+    height: 150px;
+    margin-right: 100px;
+    font-weight: normal;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .mid-content > .side-description > .description-text {
+    height: 200px;
+    margin-right: 50px;
+  }
+}
+@media (min-width: 1025px) {
+  .mid-content > .choice-view {
+    grid-column: 4/6;
+    grid-row: 2/3;
+  }
+}
 .footer-content > div {
   border: 1px solid rgba(45, 104, 240, 0.2);
 }
@@ -487,38 +487,25 @@ li.btn-choice > div {
   font-size: 40px;
 }
 
-@media (min-width: 1025px) {
+@media (max-width: 420px) {
   .footer-content {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 70px;
+    flex-direction: column;
+    margin: 20px 20px 30px 20px;
   }
   .footer-content > div {
-    width: 300px;
-    padding: 10px 150px 10px 40px;
+    margin: 5px 0px 5px 0px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
   }
-}
-@media (min-width: 1025px) and (min-width: 2500px) {
-  .footer-content > div {
-    width: 360px;
+  .footer-content > div > h4 {
+    font-size: 8px;
+    margin: auto 0px auto 10px;
   }
-}
-@media (min-width: 1025px) and (min-width: 1750px) and (max-width: 2500px) {
-  .footer-content > div {
-    width: 200px;
-  }
-}
-@media (min-width: 1025px) and (min-width: 1350px) and (max-width: 1750px) {
-  .footer-content > div {
-    width: 180px;
-    padding-right: 70px;
-    padding-left: 20px;
-  }
-}
-@media (min-width: 1025px) and (min-width: 1025px) and (max-width: 1350px) {
-  .footer-content > div {
-    width: 180px;
-    padding-right: 30px;
+  .footer-content > div > p {
+    font-size: 22px;
+    margin: auto 10px auto 0px;
   }
 }
 @media (min-width: 420px) and (max-width: 1025px) {
@@ -557,25 +544,38 @@ li.btn-choice > div {
     margin-bottom: 20px;
   }
 }
-@media (max-width: 420px) {
+@media (min-width: 1025px) {
   .footer-content {
     display: flex;
-    flex-direction: column;
-    margin: 20px 20px 30px 20px;
+    justify-content: space-around;
+    margin-bottom: 70px;
   }
   .footer-content > div {
-    margin: 5px 0px 5px 0px;
-    height: 45px;
-    display: flex;
-    justify-content: space-between;
+    width: 300px;
+    padding: 10px 150px 10px 40px;
   }
-  .footer-content > div > h4 {
-    font-size: 8px;
-    margin: auto 0px auto 10px;
+}
+@media (min-width: 1025px) and (min-width: 2500px) {
+  .footer-content > div {
+    width: 360px;
   }
-  .footer-content > div > p {
-    font-size: 22px;
-    margin: auto 10px auto 0px;
+}
+@media (min-width: 1025px) and (min-width: 1750px) and (max-width: 2500px) {
+  .footer-content > div {
+    width: 200px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1350px) and (max-width: 1750px) {
+  .footer-content > div {
+    width: 180px;
+    padding-right: 70px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 1025px) and (min-width: 1025px) and (max-width: 1350px) {
+  .footer-content > div {
+    width: 180px;
+    padding-right: 30px;
   }
 }
 

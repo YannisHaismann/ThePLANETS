@@ -25,7 +25,7 @@ function readJsonFile(file){
     })
 }
 var tablet      = 1025;
-var phone       = 376;
+var phone       = 420;
 var file        = 'data.json';
 var windowWidth = window.innerWidth;
 let nav         = document.querySelector("#nav");
