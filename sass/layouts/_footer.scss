@@ -41,7 +41,7 @@
 
 
 //TABLET
-@media (max-width: $tablet) {
+@media (min-width: $phone) and (max-width: $tablet) {
   .footer-content{
     display: flex;
     justify-content: space-around;
@@ -71,7 +71,7 @@
 }
 
 //PHONE
-@media (max-width: $phone) {
+@media  (max-width: $phone) {
   .footer-content{
     display: flex;
     flex-direction: column;

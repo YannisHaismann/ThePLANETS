@@ -57,7 +57,7 @@
 }
 
 //TABLET
-@media (max-width: $tablet) {
+@media (min-width: $phone) and (max-width: $tablet) {
   .hamburger-icon{
     display: none;
     & + ol {

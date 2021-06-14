@@ -83,7 +83,7 @@ li.btn-choice{
 }
 
 //TABLET
-@media (max-width: $tablet){
+@media (min-width: $phone) and (max-width: $tablet){
   .internal, .geology{
     display: inline;
   }
