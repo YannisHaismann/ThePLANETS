@@ -30,6 +30,10 @@ var file        = 'data.json';
 var windowWidth = window.innerWidth;
 let nav         = document.querySelector("#nav");
 
+let overview            = document.getElementById("overview");
+let internalStructure   = document.getElementById("internal-structure");
+let surfaceGeology      = document.getElementById("surface-geology");
+
 nav.addEventListener("click", (e) =>{
 
     readJsonFile(file).then(function (response){
@@ -38,9 +42,6 @@ nav.addEventListener("click", (e) =>{
         let planetImg, planetName, planetGeologyImg, planetDescription, planetWikipedia, planetRotationTime, planetRevolutionTime,
         planetRadius, planetAverageTemp, width, geologyWidth;
         let cursor = 0;
-        let overview            = document.getElementById("overview");
-        let internalStructure   = document.getElementById("internal-structure");
-        let surfaceGeology      = document.getElementById("surface-geology");
         let transparent         = "rgba(0, 0, 0, 0)"
         let basicBorderBottom   = "1px solid rgb(56, 56, 79)";
         let zoomImg = document.querySelector("#img-geology");
@@ -175,19 +176,16 @@ choiceView.addEventListener("click", (e) =>{
     let surface                 = document.getElementById("surface");
     let internal                = document.getElementById("internal");
     let geology                 = document.getElementById("geology");
-    let overview                = document.getElementById("overview");
-    let internalStructure       = document.getElementById("internal-structure");
-    let surfaceGeology          = document.getElementById("surface-geology");
     if(e.target.textContent == "OVERVIEW" || e.target == structure || e.target == surface || e.target == internal || e.target == geology || e.target.textContent == "01"  || e.target.textContent == "02" || e.target.textContent == "03"
     || e.target == overviewElt || e.target == internalStructureElt || e.target == surfaceGeologyElt){
         readJsonFile(file).then(function (response) {
-            let planet      = JSON.parse(response);
-            let mainTitle   = document.querySelector("#main-title");
-            let planetImg, planetText, planetWikipedia, color;
-            let transparent = "rgba(0, 0, 0, 0)";
+            let planet              = JSON.parse(response);
+            let mainTitle           = document.querySelector("#main-title");
+            let transparent         = "rgba(0, 0, 0, 0)";
             let basicBorderBottom   = "1px solid rgb(56, 56, 79)";
             let lowWhite            = "rgba(255, 255, 255, 0.6)";
             let white               = "rgba(255, 255, 255, 1)";
+            let planetImg, planetText, planetWikipedia, color;
 
             switch (mainTitle.textContent) {
                 case "MERCURY":
