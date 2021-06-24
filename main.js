@@ -1,6 +1,6 @@
 var resizeTimeout;
 window.addEventListener('resize', function(event) {
-    if(window.innerWidth < 420 && window.innerWidth > 370){
+    if(window.innerWidth > 419 && window.innerWidth < 421){
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function(){
             window.location.reload();
